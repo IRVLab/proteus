@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+    <meta>
+        <name>LoCO PROTEUS Testing Language</name>
+        <robot>LoCO-AUV</robot>
+        <description>A PROTEUS language designed for testing PROTEUS on LoCO</description>
+    </meta>
+
+    <input>
+        <symbols>
+        </symbols>
+
+        <vectors>
+        </vectors>
+
+        <actions>
+        </actions>
+    </input>
+
+    <output>
+        <symbols>
+            <symb name="Affirmative" id="out-affirm" description="A confirmation response indicating Yes, I will, etc." tags="conversational, control"></symb>
+            <symb name="Negative" id="out-negative" description="A declining response indicating No, I will not, etc." tags="conversational, control"></symb>
+            <symbol name="Follow Me" id="out-follow" description="A response requesting the interactant to follow them" tags="commands"></symbol>
+        </symbols>
+
+        <vectors>
+            <vec name="RCVM " type="explicit_communication" direction="output">loco_proteus_testing_rcvm.sdf</vec>
+        </vectors>
+
+        <actions>
+        </actions>
+
+    </output>
+    
+    <state>
+    </state>
+
+    <context>
+    </context>
+
+    <actions>
+    </actions>
+    
+</language>

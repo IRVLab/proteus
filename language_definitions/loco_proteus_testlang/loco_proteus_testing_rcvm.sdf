@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kinemes>
+    <kineme name="Affirmative" id="out-affirm">
+        <knode step="0" description="Upswing 1">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="30" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="1" description="Downswing 1">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="-60" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="3" description="Upswing 2">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="60" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="4" description="Downswing 2">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="-30" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+    </kineme>
+
+    <kineme name="Negative" id="out-negative">
+        <knode step="0" description="Right swing 1">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="0" yaw="15"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="1" description="Left Swing 1">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="0" yaw="-30"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="2" description="Right Swing 2">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="0" yaw="30"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+        <knode step="3" description="Left Swing 2">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="0" yaw="-15"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+    </kineme>
+    <kineme name="Negative" id="out-negative">
+        <knode step="0" description="Right swing 1">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="0" pitch="0" yaw="15"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode>
+    </kineme>
+    
+</kinemes>
+
+
