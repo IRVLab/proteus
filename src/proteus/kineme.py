@@ -1,4 +1,4 @@
-from node import Node
+from proteus.node import Node
 
 class KNode(Node):
     def __init__(self, id, prev, nex, desc, pos, orr, velo, dur):
@@ -7,10 +7,6 @@ class KNode(Node):
         self.orientation = orr
         self.velocity = velo
         self.duration = dur
-
-
-
-
 
 class Kineme(object):
     def __init__(self):

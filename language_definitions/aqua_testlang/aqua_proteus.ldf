@@ -4,6 +4,7 @@
         <name>PROTEUS Testing Language</name>
         <robot>Aqua8</robot>
         <description>A PROTEUS language designed for testing PROTEUS on Aqua</description>
+        <directory>/home/michael/catkin_ws/src/PROTEUS-HRI/proteus/language_definitions/aqua_testlang/</directory>
     </meta>
 
     <input>
@@ -26,7 +27,7 @@
         </symbols>
 
         <vectors>
-            <vector name="RCVM" type="explicit_communication">aqua_proteus_testing_rcvm.sdf</vector>
+            <vector name="RCVM" type="explicit_communication">aqua_proteus_rcvm.sdf</vector>
         </vectors>
 
         <actions>

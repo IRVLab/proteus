@@ -9,7 +9,7 @@ class Vector(object):
     def __str__(self):
         return "    VEC-%s: %s of type %s, defined in %s\n"%(self.direction, self.name, self.type, self.definition_file)
     
-    def parse_from_xml(self, xml_object):
+    def parse_from_xml(self, xml_object, directory):
         self.name = str(xml_object.get('name'))
         self.type = str(xml_object.get('type'))
-        self.definition_file = str(xml_object.text)
+        self.definition_file = directory + str(xml_object.text)

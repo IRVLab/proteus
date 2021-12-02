@@ -6,6 +6,7 @@ class Language(object):
         self.name = None
         self.robot = None
         self.description = None
+        self.directory = None
 
         self.in_symbols = list()
         self.in_vectors = list()
@@ -51,6 +52,7 @@ class Language(object):
                 self.name = str(c[0].text)
                 self.robot = str(c[1].text)
                 self.description = str(c[2].text)
+                self.directory = str(c[3].text)
                 
             elif c.tag == 'input':
                 continue
@@ -64,7 +66,7 @@ class Language(object):
                     elif gc.tag == 'vectors':
                         for vector in gc:
                             v = Vector('out')
-                            v.parse_from_xml(vector)
+                            v.parse_from_xml(vector, self.directory)
                             self.out_vectors.append(v)
                     elif gc.tag == 'actions':
                         continue
