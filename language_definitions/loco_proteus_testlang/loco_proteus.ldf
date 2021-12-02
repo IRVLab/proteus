@@ -19,9 +19,11 @@
 
     <output>
         <symbols>
-            <symb name="Affirmative" id="out-affirm" description="A confirmation response indicating Yes, I will, etc." tags="conversational, control"></symb>
-            <symb name="Negative" id="out-negative" description="A declining response indicating No, I will not, etc." tags="conversational, control"></symb>
-            <symbol name="Follow Me" id="out-follow" description="A response requesting the interactant to follow them" tags="commands"></symbol>
+            <symbol name="Affirmative" id="affirmative" call_type="trigger" description="A confirmation response indicating Yes, I will, etc." tags="conversational, control"></symbol>
+            <symbol name="Negative" id="negative" call_type="trigger" description="A declining response indicating No, I will not, etc." tags="conversational, control"></symbol>
+            <symbol name="Follow Me" id="follow" call_type="trigger" description="A response requesting the interactant to follow them" tags="commands"></symbol>
+            <symbol name="Go To Direction" id="go_direction" call_type="directional" description="A response requesting the interactant tom move in a direction" tags="commands"></symbol>
+
         </symbols>
 
         <vectors>

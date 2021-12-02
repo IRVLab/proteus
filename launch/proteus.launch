@@ -1,0 +1,3 @@
+<launch>
+    <node name="proteus_language_server" pkg="proteus" type="lang_server.py" respawn="true"></node>
+</launch>
