@@ -22,7 +22,3 @@ class Symbol(object):
         tags = xml_object.get('tags')
         for t in tags.split(','):
             self.tags.append(str(t))
-
-
-
-    
