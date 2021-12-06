@@ -4,7 +4,7 @@
         <name>PROTEUS Testing Language</name>
         <robot>Aqua8</robot>
         <description>A PROTEUS language designed for testing PROTEUS on Aqua</description>
-        <directory>/home/michael/catkin_ws/src/PROTEUS-HRI/proteus/language_definitions/aqua_testlang/</directory>
+        <directory>/home/michael/proteus_ws/src/proteus/language_definitions/aqua_testlang/</directory>
     </meta>
 
     <input>
