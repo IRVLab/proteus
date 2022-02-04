@@ -1,77 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kinemes>
     <kineme name="Affirmative" id="affirmative">
-        <knode step="0" description="Upswing 1">
+        <knode-abs step="0" description="Upswing 1">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="15" yaw="0"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="1" description="Downswing 1">
+        </knode-abs>
+        <knode-abs step="1" description="Downswing 1">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="-30" yaw="0"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="3" description="Upswing 2">
+        </knode-abs>
+        <knode-abs step="3" description="Upswing 2">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="30" yaw="0"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="4" description="Downswing 2">
+        </knode-abs>
+        <knode-abs step="4" description="Downswing 2">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="-15" yaw="0"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
+        </knode-abs>
     </kineme>
 
     <kineme name="Negative" id="negative">
-        <knode step="0" description="Right swing 1">
+        <knode-abs step="0" description="Right swing 1">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="0" yaw="15"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="1" description="Left Swing 1">
+        </knode-abs>
+        <knode-abs step="1" description="Left Swing 1">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="0" yaw="-30"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="2" description="Right Swing 2">
+        </knode-abs>
+        <knode-abs step="2" description="Right Swing 2">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="0" yaw="30"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
-        <knode step="3" description="Left Swing 2">
+        </knode-abs>
+        <knode-abs step="3" description="Left Swing 2">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="0" yaw="-15"></orientation>
             <velocity linear="0" angular="0.3"></velocity>
             <duration seconds="2"></duration>
-        </knode>
+        </knode-abs>
     </kineme>
 
-    <kineme name="Follow Me" id="">
-        <knode step="0" description="">
+    <kineme name="Follow Me" id="follow">
+        <knode-abs step="0" description="">
             <position x="0" y="0" z="0"></position>
             <orientation roll="0" pitch="0" yaw="0"></orientation>
             <velocity linear="0" angular="0"></velocity>
             <duration seconds="0"></duration>
-        </knode>
+        </knode-abs>
     </kineme>
 
-    <kineme name="" id="">
-        <knode step="0" description="">
+    <kineme name="Go To Direction" id="go_direction">
+        <knode-dir step="0" description="Go To target direction">
+            <mode type="direct"></mode>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="2"></duration>
+        </knode-dir>
+        <knode-abs step="1" description="">
             <position x="0" y="0" z="0"></position>
-            <orientation roll="0" pitch="0" yaw="0"></orientation>
-            <velocity linear="0" angular="0"></velocity>
-            <duration seconds="0"></duration>
-        </knode>
+            <orientation roll="15" pitch="0" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="1"></duration>
+        </knode-abs>
+        <knode-abs step="2" description="">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="-30" pitch="0" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="1"></duration>
+        </knode-abs>
+        <knode-abs step="3" description="">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="30" pitch="0" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="1"></duration>
+        </knode-abs>
+        <knode-abs step="4" description="">
+            <position x="0" y="0" z="0"></position>
+            <orientation roll="-15" pitch="0" yaw="0"></orientation>
+            <velocity linear="0" angular="0.3"></velocity>
+            <duration seconds="1"></duration>
+        </knode-abs>
     </kineme>
-
 
 </kinemes>
 
