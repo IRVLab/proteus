@@ -23,7 +23,7 @@
             <symbol name="Affirmative" id="affirmative" call_type="trigger" description="A confirmation response indicating Yes, I will, etc." tags="conversational,control"></symbol>
             <symbol name="Negative" id="negative" call_type="trigger" description="A declining response indicating No, I will not, etc." tags="conversational,control"></symbol>
             <symbol name="Attention" id="attention" call_type="trigger" description="A command telling the interactant to pay attention" tags="conversational"></symbol>
-            <symbol name="Wait For Command" id="waiting_for_command" call_type="trigger" description="A question asking the interactant for input of some kind." tags="conversational,question"></symbol>
+            <symbol name="Wait For Command" id="wait_for_command" call_type="trigger" description="A question asking the interactant for input of some kind." tags="conversational,question"></symbol>
             <symbol name="Follow Me" id="follow_me" call_type="trigger" description="A command requesting the interactant to follow the AUV" tags="commands"></symbol>
             <symbol name="Follow You" id="follow_you" call_type="trigger" description="An informational phrase telling the interactant that the AUV will follow them" tags="information"></symbol>
             <symbol name="Come To Me" id="come" call_type="trigger" description="A command telling the interactnat to come to the AUV" tags="commands"></symbol>
@@ -33,7 +33,6 @@
             <symbol name="Stay" id="stay" call_type="trigger" description="A command telling the interactant to stay where they are." tags="commands"></symbol>
             <symbol name="Which Way" id="which_way" call_type="trigger" description="A question asking the interactant which way to go." tags="question"></symbol>
             <symbol name="Remaining Battery" id="battery_remaining" call_type="quantity" description="An informational phrase telling the interactant how much battery the AUV has." tags="information"></symbol>
-
         </symbols>
 
         <vectors>

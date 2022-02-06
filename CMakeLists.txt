@@ -41,6 +41,7 @@ add_service_files(
   SymbolTrigger.srv
   SymbolDirectional.srv
   SymbolTarget.srv
+  SymbolQuantity.srv
 )
 
 ## Generate actions in the 'action' folder

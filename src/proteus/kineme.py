@@ -2,7 +2,9 @@ from proteus.node import Node
 from proteus.position import Position
 from proteus.orientation import Orientation
 from proteus.velocity import Velocity
+from proteus.depth import Depth
 from proteus.duration import Duration
+from proteus.quantity import Quantity
 
 class KNode(Node):
     def __init__(self, id, desc, dur):
@@ -13,23 +15,44 @@ class KNode(Node):
         return "{0} DUR({1.duration})".format(super().__str__(), self)
 
 class KNodeAbsolute(KNode):
-    def __init__(self, id, desc, pos, orr, velo, dur):
+    def __init__(self, id, desc, orr, velo, dur):
         super().__init__(id, desc, dur)
-        self.position = pos
         self.orientation = orr
         self.velocity = velo
 
     def __str__(self):
-        return "{0} POS({1.position}) ORR({1.orientation}) VEL({1.velocity}) ".format(super().__str__(), self)
+        return "{0} ORR({1.orientation}) VEL({1.velocity}) ".format(super().__str__(), self)
+
+class KNodePause(KNode):
+    def __init__(self, id, desc, dur):
+        super().__init__(id, desc, dur)
+        
+    def __str__(self):
+        return "{0} ".format(super().__str__(), self)
+
+class KNodeDepth(KNode):
+    def __init__(self, id, desc, depth, vel, dur):
+        super().__init__(id, desc, dur)
+        self.depth = depth
+        self.velocity = vel
+        
+    def __str__(self):
+        return "{0} DEPTH {1.depth} VEL {1.velocity}".format(super().__str__(), self)
 
 class KNodeDirectional(KNode):
-    def __init__(self, id, desc, mode, velo, dur):
+    def __init__(self, id, desc, dur):
         super().__init__(id, desc, dur)
-        self.mode = mode
-        self.velocity = velo
 
     def __str__(self):
-        return "{0} MODE ({1.mode}) VEL({1.velocity}) ".format(super().__str__(), self)
+        return "{0} ".format(super().__str__())
+
+class KNodeQuantity(KNode):
+    def __init__(self, id, desc, quant, dur):
+        super().__init__(id, desc, dur)
+        self.quantity = quant
+    def __str__(self):
+        return "{0} Quantity {1.quantity}".format(super().__str__(), self)
+    
             
 class Kineme(object):
     def __init__(self):
@@ -52,6 +75,9 @@ class Kineme(object):
         self.id = xml_object.get('id')
         # Can't set symbol or call_type here, we'll do that later, we've gotta do that once we do a match between symbol ids and kineme ids.
 
+        #TODO Add error handling to kick back kinemes with KNodes that don't match their trigger type. This needs to be dealt with at this level, not at the execution level.
+        #TODO Additionally, we should have a sdf syntax checker that can be run seperately.
+
         # Now we have to parse the KNodes.
         for n in xml_object:
             type = n.tag
@@ -59,25 +85,47 @@ class Kineme(object):
                 step = int(n.get('step'))
                 description = n.get('description')
 
-                pos = Position(n[0].get('x'), n[0].get('y'), n[0].get('z'))
-                orr = Orientation(n[1].get('roll'), n[1].get('pitch'), n[1].get('yaw'))
-                vel = Velocity(n[2].get('linear'),n[2].get('angular'))
-                dur = Duration(n[3].get('seconds'))
+                orr = Orientation(n[0].get('roll'), n[0].get('pitch'), n[0].get('yaw'))
+                vel = Velocity(n[1].get('surge'),n[1].get('sway'), n[1].get('heave'))
+                dur = Duration(n[2].get('seconds'))
 
-                self.knodes.append(KNodeAbsolute(step, description, pos, orr, vel, dur))
+                self.knodes.append(KNodeAbsolute(step, description, orr, vel, dur))
 
             elif type == 'knode-dir': 
                 step = int(n.get('step'))
                 description = n.get('description')
 
-                mode = n[0].get('type')
-                vel = Velocity(n[1].get('linear'),n[1].get('angular'))
-                dur = Duration(n[2].get('seconds'))
+                dur = Duration(n[0].get('seconds'))
 
-                self.knodes.append(KNodeDirectional(step, description, mode, vel, dur))
+                self.knodes.append(KNodeDirectional(step, description, dur))
 
             elif type == 'knode-tar': 
                 pass
+
+            elif type == 'knode-quant': 
+                step = int(n.get('step'))
+                description = n.get('description')
+
+                quant = Quantity(n[0].get('display_on'), n[0].get('amount'))
+                dur = Duration(n[1].get('seconds'))
+
+                self.knodes.append(KNodeQuantity(step, description, quant, dur))
+
+            elif type == 'knode-pause': 
+                step = int(n.get('step'))
+                description = n.get('description')
+                dur = Duration(n[0].get('seconds'))
+
+                self.knodes.append(KNodePause(step, description, dur))
+            elif type == 'knode-depth': 
+                step = int(n.get('step'))
+                description = n.get('description')
+                
+                depth = Depth(n[0].get('amount'),n[0].get('mode'))
+                vel = Velocity(n[1].get('surge'),n[1].get('sway'), n[1].get('heave'))
+                dur = Duration(n[2].get('seconds'))
+
+                self.knodes.append(KNodeDepth(step, description, depth, vel, dur))
             else:
                 print("NO KNODE TYPE RECOGNIZED.")
             
