@@ -74,7 +74,7 @@
     </display-phrase>
     <display-phrase name="Remaining Battery" id="battery_remaining">
         <dnode step="0">
-            <text data="{}% battery remaining"></text>
+            <text data="{:.0f}% battery remaining"></text>
             <duration seconds="10"></duration>
         </dnode>
     </display-phrase>
