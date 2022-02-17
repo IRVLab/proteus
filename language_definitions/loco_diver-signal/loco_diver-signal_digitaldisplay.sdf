@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display-phrases>
+    <display-phrase name="Affirmative" id="affirmative">
+        <dnode step="0">
+            <text data="Affirmative"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Negative" id="negative">
+        <dnode step="0">
+            <text data="Negative"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Attention" id="attention">
+        <dnode step="0">
+            <text data="Pay attention!"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Wait For Command" id="wait_for_command">
+        <dnode step="0">
+            <text data="Wait For Command"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Follow Me" id="follow_me">
+        <dnode step="0">
+            <text data="Follow Me"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Follow You" id="follow_you">
+        <dnode step="0">
+            <text data="I'll Follow You"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Come To Me" id="come">
+        <dnode step="0">
+            <text data="Come To Me"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Danger" id="danger">
+        <dnode step="0">
+            <text data="Danger Nearby"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Malfunction" id="malfunction">
+        <dnode step="0">
+            <text data="Internal Malfunction"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Go To Direction" id="go_direction">
+        <dnode step="0">
+            <text data="Go {}"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Stay" id="stay">
+        <dnode step="0">
+            <text data="Stay Where You Are"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Which Way" id="which_way">
+        <dnode step="0">
+            <text data="Which Way Should We Go?"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+    <display-phrase name="Remaining Battery" id="battery_remaining">
+        <dnode step="0">
+            <text data="{}% battery remaining"></text>
+            <duration seconds="10"></duration>
+        </dnode>
+    </display-phrase>
+</display-phrases>
