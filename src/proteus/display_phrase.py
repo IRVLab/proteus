@@ -1,3 +1,4 @@
+from builtins import super
 from proteus.node import Node
 from proteus.text import Text
 from proteus.duration import Duration

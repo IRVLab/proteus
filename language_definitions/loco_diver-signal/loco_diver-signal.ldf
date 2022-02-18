@@ -4,7 +4,7 @@
         <name>PROTEUS Diver-Signal Based Language</name>
         <robot>LoCO-AUV</robot>
         <description>A PROTEUS language designed for testing PROTEUS on Aqua, with symbols based on based on iterative coding of diver hand signal languages.</description>
-        <directory>/home/michael/proteus_ws/src/proteus/language_definitions/loco_diver-signal/</directory>
+	<directory>/home/irvlab/catkin_ws/src/proteus/language_definitions/loco_diver-signal/</directory>
     </meta>
 
     <input>
