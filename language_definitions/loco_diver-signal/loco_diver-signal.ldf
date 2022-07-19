@@ -38,6 +38,8 @@
         <vectors>
             <vector name="RCVM" type="explicit_communication">loco_diver-signal_kineme.sdf</vector>
             <vector name="DigitalDisplay" type="explicit_communication">loco_diver-signal_digitaldisplay.sdf</vector>
+            <vector name="HREye-Active" type="explicit_communication">loco_diver-signal_luceme.sdf</vector>
+            <vector name="HREye-Ocular" type="gaze_indication">loco_diver-signal_ocular-luceme.sdf</vector>
         </vectors>
 
         <actions>
