@@ -128,5 +128,3 @@ class Kineme(object):
                 self.knodes.append(KNodeDepth(step, description, depth, vel, dur))
             else:
                 print("NO KNODE TYPE RECOGNIZED.")
-            
-

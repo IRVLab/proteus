@@ -95,15 +95,15 @@
         <lnode-blink step="0" sector="inner" description="Inner ring blinks green">
             <illumination id="on_state" color="green" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
     <luceme name="Attention" id="attention">
-        <lnode-blink step="0" sector="exlaim" description="Exclaim symbol blinks cyan.">
+        <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks cyan.">
             <illumination id="on_state" color="cyan" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
@@ -115,15 +115,15 @@
         <lnode-blink step="0" sector="inner" description="Inner ring blinks red.">
             <illumination id="on_state" color="red" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
     <luceme name="Wait For Command" id="wait_for_command">
         <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
-            <illumination id="top_state" color="(0,50,50)" brightness="0.20"></illumination>
-            <illumination id="bottom_state" color="(0,50,50)" brightness="1.0"></illumination>
-            <cycle type="pulse" top="top_state" bot="bottom_state" vary_val="alpha" step="0.10" freq="50" bounce="both"></cycle>
+            <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
+            <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
+            <pulse vary_param="alpha" step="0.10" freq="50"></cycle>
             <duration seconds="6"/><duration>
         </lnode-pulse>
     </luceme>
@@ -222,7 +222,7 @@
         <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks red.">
             <illumination id="on_state" color="red" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
@@ -232,9 +232,9 @@
             <duration seconds="6"></duration>
         </lnode-static>
         <lnode-pulse step="0" sector="inner" description="Pulse inner ring redish">
-            <illumination id="top_state" color="(0,50,50)" brightness="0.25"></illumination>
-            <illumination id="bottom_state" color="(250,50,50)" brightness="0"></illumination>
-            <cycle type="pulse" top="top_state" bot="bottom_state" vary_val="red" step="10" freq="50" bounce="both"></cycle>
+            <illumination id="hi_state" color="(0,50,50)" brightness="0.25"></illumination>
+            <illumination id="lo_state" color="(250,50,50)" brightness="0"></illumination>
+            <pulse vary_param="red" step="10" freq="50"></cycle>
         </lnode-pulse>
     </luceme>
 
@@ -242,7 +242,7 @@
         <lnode-blink step="0" sector="directional" description="Blink sector around angle">
             <illumination id="on_state" color="yellow" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
@@ -254,7 +254,7 @@
         <lnode-blink step="0" sector="inner" description="Outer ring blinks yellow.">
             <illumination id="on_state" color="yellow" brightness="0.25"><illumination/>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="3"><cycle/>
+            <blink period="2" iterations="3"><cycle/>
         </lnode-blink>
     </luceme>
 
@@ -262,27 +262,27 @@
         <lnode-blink step="0" sector="sec-left" description="Blink left">
             <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="1"><cycle/>
+            <blink period="2" iterations="1"><cycle/>
         </lnode-blink>
         <lnode-blink step="1" sector="sec-right" description="Blink right">
             <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="1"><cycle/>
+            <blink period="2" iterations="1"><cycle/>
         </lnode-blink>
         <lnode-blink step="2" sector="sec-top" description="Blink top">
             <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="1"><cycle/>
+            <blink period="2" iterations="1"><cycle/>
         </lnode-blink>
         <lnode-blink step="3" sector="sec-bot" description="Blink bot">
             <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
             <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <cycle type="blink" on="on_state" off="off_state" period="2" iterations="1"><cycle/>
+            <blink period="2" iterations="1"><cycle/>
         </lnode-blink>
         <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
-            <illumination id="top_state" color="(0,50,50)" brightness="0.20"></illumination>
-            <illumination id="bottom_state" color="(0,50,50)" brightness="1.0"></illumination>
-            <cycle type="pulse" top="top_state" bot="bottom_state" vary_val="alpha" step="0.10" freq="50" bounce="both"></cycle>
+            <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
+            <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
+            <pulse vary_param="alpha" step="0.10" freq="50"></cycle>
             <duration seconds="2"/><duration>
         </lnode-pulse>
     </luceme>
