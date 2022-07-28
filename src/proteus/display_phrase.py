@@ -12,6 +12,17 @@ class DNode(Node):
     def __str__(self):
         return "{0} TEXT({1.text}) DUR({1.duration})".format(super().__str__(), self)
 
+    def parse_from_xml(self, xml):
+        super().parse_from_xml(xml)
+
+        for item in xml:
+            if item.tag == 'text':
+                self.text = Text()
+                self.text.parse_from_xml(item)
+            elif item.tag == 'duration':
+                self.duration = Duration()
+                self.duration.parse_from_xml(item)
+
 class DisplayPhrase(object):
     def __init__(self):
         self.name = None
@@ -20,7 +31,7 @@ class DisplayPhrase(object):
         self.dnodes = list()
 
     def __str__(self):
-        s = "DP (%s) %s\n"%(self.id, self.name)
+        s = "DISLAYP PHRASE (%s) %s\n"%(self.id, self.name)
         for d in self.dnodes:
             s += "... %s\n"%(str(d))
         return s
@@ -37,13 +48,9 @@ class DisplayPhrase(object):
         #TODO Additionally, we should have a sdf syntax checker that can be run seperately.
 
         # Now we have to parse the KNodes.
-        for n in xml_object:
-            type = n.tag
+        for ddef in xml_object:
+            type = ddef.tag
             if type == 'dnode':
-                step = int(n.get('step'))
-                description = n.get('description')
-
-                text = Text(n[0].get('data'))
-                dur = Duration(n[1].get('seconds'))
-
-                self.dnodes.append(DNode(step, description, text, dur))
+                d = DNode()
+                d.parse_from_xml(ddef)
+                self.dnodes.append(d)

@@ -5,4 +5,9 @@ class Velocity(object):
         self.heave = float(heave)
 
     def __str__(self):
-        return "{} surge, {} sway, {} heave".format(self.surge, self.sway, self.heave)
+        return "VELOCITY {} surge, {} sway, {} heave".format(self.surge, self.sway, self.heave)
+
+    def parse_from_xml(self, xml):
+        self.surge = str(xml.get('surge'))
+        self.sway = str(xml.get('sway'))
+        self.heave = str(xml.get('heave'))

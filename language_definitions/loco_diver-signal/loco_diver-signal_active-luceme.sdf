@@ -1,309 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<hreye-meta>
-    <!-- The rings meta information defines the LED indexing, including the total number of LEDS, the number of rings, 
-    whether they are clockwise or counter clockwise, and their cardinal indexes. If your rings' indexing/directionality 
-    is different, or cardinal indexes are different, you can easily change those here.-->
-    <rings num_rings="2" total_leds="40">
-        <ring id="outer-ring" start="0" end="23" dir="clockwise" top="0" right="6" bot="12" left="18"></ring>
-        <ring id="inner-ring" start="24" end="39" dir="counter-clockwise" top="24" right="28" bot="32" left="36"></ring>
-    </rings>
+<hreye-definition>
+    <hreye-config>
+        <!-- The rings meta information defines the LED indexing, including the total number of LEDS, the number of rings, 
+        whether they are clockwise or counter clockwise, and their cardinal indexes. If your rings' indexing/directionality 
+        is different, or cardinal indexes are different, you can easily change those here.-->
+        <rings num_rings="2" total_leds="40">
+            <ring id="outer-ring" start="0" end="23" dir="clockwise" top="0" right="6" bot="12" left="18"></ring>
+            <ring id="inner-ring" start="24" end="39" dir="counter-clockwise" top="24" right="28" bot="32" left="36"></ring>
+        </rings>
 
-    <!-- The sectors meta information provides aliases for portions of the device. Instead of having to specify indexes or 
-    even cardinal points, you can specify sector assignments for lnodes.-->
-    <sectors>
-        <sector id="all">
-            <sector-segment ring="outer-ring" start="top" end="top"></sector-segment>
-            <sector-segment ring="inner-ring" start="top" end="top"></sector-segment>
-        </sector>
-        <sector id="outer">
-            <sector-segment ring="outer-ring" start="top" end="top"></sector-segment>
-        </sector>
-        <sector id="inner">
-            <sector-segment ring="inner-ring" start="top" end="top"></sector-segment>
-        </sector>
-        <sector id="exclaim">
-            <sector-segment ring="outer-ring" start="top-1" end="top+1"></sector-segment>
-            <sector-segment ring="outer-ring" start="right-1" end="right+1"></sector-segment>
-            <sector-segment ring="outer-ring" start="bot-1" end="bot+1"></sector-segment>
-            <sector-segment ring="outer-ring" start="left-1" end="left+1"></sector-segment>
-            <sector-segment ring="inner-ring" start="top+2" end="top+3"></sector-segment>
-            <sector-segment ring="inner-ring" start="right+2" end="right+3"></sector-segment>
-            <sector-segment ring="inner-ring" start="bot+2" end="bot+3"></sector-segment>
-            <sector-segment ring="inner-ring" start="left+2" end="left+3"></sector-segment>
-        </sector>
-        <sector id="sec-top">
-            <sector-segment ring="outer-ring" start="left" end="right"></sector-segment>
-            <sector-segment ring="inner-ring" start="left" end="right"></sector-segment>
-        </sector>
-        <sector id="sec-right">
-            <sector-segment ring="outer-ring" start="top" end="bot"></sector-segment>
-            <sector-segment ring="inner-ring" start="top" end="bot"></sector-segment>
-        </sector>
-        <sector id="sec-bot">
-            <sector-segment ring="outer-ring" start="right" end="left"></sector-segment>
-            <sector-segment ring="inner-ring" start="right" end="left"></sector-segment>
-        </sector>
-        <sector id="sec-right">
-            <sector-segment ring="outer-ring" start="bot" end="top"></sector-segment>
-            <sector-segment ring="inner-ring" start="bot" end="top"></sector-segment>
-        </sector>
-        <sector id="ctm-trans">
-            <sector-segment ring="outer-ring" start="top+1" end="top+3"></sector-segment>
-            <sector-segment ring="outer-ring" start="bot+1" end="bot+3"></sector-segment>
-            <sector-segment ring="outer-ring" start="left+1" end="left+3"></sector-segment>
-            <sector-segment ring="outer-ring" start="right+1" end="right+3"></sector-segment>
-            <sector-segment ring="inner-ring" start="top" end="top+1"></sector-segment>
-            <sector-segment ring="inner-ring" start="bot" end="bot+1"></sector-segment>
-            <sector-segment ring="inner-ring" start="left" end="left+1"></sector-segment>
-            <sector-segment ring="inner-ring" start="right" end="right+1"></sector-segment>
-        </sector>
-        <sector id="directional">
-            <relative-sector-segment ring="outer-ring" center="roll-angle" width="12"></relative-sector-segment>
-            <relative-sector-segment ring="inner" center="roll-angle" width="8"></relative-sector-segment>
-        </sector>
+        <!-- The sectors meta information provides aliases for portions of the device. Instead of having to specify indexes or 
+        even cardinal points, you can specify sector assignments for lnodes.-->
+        <sectors>
+            <sector id="all">
+                <sector-segment ring="outer-ring" start="top" end="top"></sector-segment>
+                <sector-segment ring="inner-ring" start="top" end="top"></sector-segment>
+            </sector>
+            <sector id="outer">
+                <sector-segment ring="outer-ring" start="top" end="top"></sector-segment>
+            </sector>
+            <sector id="inner">
+                <sector-segment ring="inner-ring" start="top" end="top"></sector-segment>
+            </sector>
+            <sector id="exclaim">
+                <sector-segment ring="outer-ring" start="top-1" end="top+1"></sector-segment>
+                <sector-segment ring="outer-ring" start="right-1" end="right+1"></sector-segment>
+                <sector-segment ring="outer-ring" start="bot-1" end="bot+1"></sector-segment>
+                <sector-segment ring="outer-ring" start="left-1" end="left+1"></sector-segment>
+                <sector-segment ring="inner-ring" start="top+2" end="top+3"></sector-segment>
+                <sector-segment ring="inner-ring" start="right+2" end="right+3"></sector-segment>
+                <sector-segment ring="inner-ring" start="bot+2" end="bot+3"></sector-segment>
+                <sector-segment ring="inner-ring" start="left+2" end="left+3"></sector-segment>
+            </sector>
+            <sector id="sec-top">
+                <sector-segment ring="outer-ring" start="left" end="right"></sector-segment>
+                <sector-segment ring="inner-ring" start="left" end="right"></sector-segment>
+            </sector>
+            <sector id="sec-right">
+                <sector-segment ring="outer-ring" start="top" end="bot"></sector-segment>
+                <sector-segment ring="inner-ring" start="top" end="bot"></sector-segment>
+            </sector>
+            <sector id="sec-bot">
+                <sector-segment ring="outer-ring" start="right" end="left"></sector-segment>
+                <sector-segment ring="inner-ring" start="right" end="left"></sector-segment>
+            </sector>
+            <sector id="sec-right">
+                <sector-segment ring="outer-ring" start="bot" end="top"></sector-segment>
+                <sector-segment ring="inner-ring" start="bot" end="top"></sector-segment>
+            </sector>
+            <sector id="ctm-trans">
+                <sector-segment ring="outer-ring" start="top+1" end="top+3"></sector-segment>
+                <sector-segment ring="outer-ring" start="bot+1" end="bot+3"></sector-segment>
+                <sector-segment ring="outer-ring" start="left+1" end="left+3"></sector-segment>
+                <sector-segment ring="outer-ring" start="right+1" end="right+3"></sector-segment>
+                <sector-segment ring="inner-ring" start="top" end="top+1"></sector-segment>
+                <sector-segment ring="inner-ring" start="bot" end="bot+1"></sector-segment>
+                <sector-segment ring="inner-ring" start="left" end="left+1"></sector-segment>
+                <sector-segment ring="inner-ring" start="right" end="right+1"></sector-segment>
+            </sector>
+            <sector id="directional">
+                <relative-sector-segment ring="outer-ring" center="roll-angle" width="12"></relative-sector-segment>
+                <relative-sector-segment ring="inner" center="roll-angle" width="8"></relative-sector-segment>
+            </sector>
 
-    </sectors>
+        </sectors>
 
-    <!-- The colors meta information provides a set of colors for use on the device. 
-    These color definitons are drawn directly from the original HREye code.-->
-    <colors>
-        <color id="none" r="0" g="0" b="0"></color>
-        <color id="green" r="0" g="200" b="0"></color>
-        <color id="cyan" r="0" g="50" b="50"></color>
-        <color id="blue" r="0" g="0" b="140"></color>
-        <color id="white" r="250" g="250" b="250"></color>
-        <color id="red" r="200" g="0" b="0"></color>
-        <color id="purple" r="128" g="0" b="128"></color>
-        <color id="orange" r="255" g="165" b="0"></color>
-        <color id="yellow" r="255" g="255" b="0"></color>
-    </colors>
+        <!-- The colors meta information provides a set of colors for use on the device. 
+        These color definitons are drawn directly from the original HREye code.-->
+        <colors>
+            <color id="none" r="0" g="0" b="0"></color>
+            <color id="green" r="0" g="200" b="0"></color>
+            <color id="cyan" r="0" g="50" b="50"></color>
+            <color id="blue" r="0" g="0" b="140"></color>
+            <color id="white" r="250" g="250" b="250"></color>
+            <color id="red" r="200" g="0" b="0"></color>
+            <color id="purple" r="128" g="0" b="128"></color>
+            <color id="orange" r="255" g="165" b="0"></color>
+            <color id="yellow" r="255" g="255" b="0"></color>
+        </colors>
 
-    <!-- The default state meta information provides a luceme-like definition which the HREyes should be set to after any luceme call in this mode.-->
-    <default-state>
-        <lnode-static step="0" sector="all" description="default state">
-            <illumination color="none" brightness="0.25"></illumination>
-        </lnode-static>
-    </default-state>
-</hreye-meta>
+        <!-- The default state meta information provides a luceme-like definition which the HREyes should be set to after any luceme call in this mode.-->
+        <default-state>
+            <lnode-static step="0" sector="all" description="default state">
+                <illumination color="none" brightness="0.25"></illumination>
+            </lnode-static>
+        </default-state>
+    </hreye-config>
 
-<lucemes>
-    <luceme name="Affirmative" id="affirmative">
-        <lnode-static step="0" sector="outer" description="Outer ring cyan">
-            <illumination color="cyan" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-blink step="0" sector="inner" description="Inner ring blinks green">
-            <illumination id="on_state" color="green" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+    <lucemes>
+        <luceme name="Affirmative" id="affirmative">
+            <lnode-static step="0" sector="outer" description="Outer ring cyan">
+                <illumination color="cyan" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-blink step="0" sector="inner" description="Inner ring blinks green">
+                <illumination id="on_state" color="green" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Attention" id="attention">
-        <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks cyan.">
-            <illumination id="on_state" color="cyan" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+        <luceme name="Attention" id="attention">
+            <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks cyan.">
+                <illumination id="on_state" color="cyan" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Negative" id="negative">
-        <lnode-static step="0" sector="outer" description="Outer ring cyan">
-            <illumination color="cyan" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-blink step="0" sector="inner" description="Inner ring blinks red.">
-            <illumination id="on_state" color="red" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+        <luceme name="Negative" id="negative">
+            <lnode-static step="0" sector="outer" description="Outer ring cyan">
+                <illumination color="cyan" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-blink step="0" sector="inner" description="Inner ring blinks red.">
+                <illumination id="on_state" color="red" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Wait For Command" id="wait_for_command">
-        <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
-            <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
-            <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
-            <pulse vary_param="alpha" step="0.10" freq="50"></cycle>
-            <duration seconds="6"/><duration>
-        </lnode-pulse>
-    </luceme>
+        <luceme name="Wait For Command" id="wait_for_command">
+            <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
+                <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
+                <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
+                <pulse vary_param="alpha" step="0.10" freq="50"></pulse>
+                <duration seconds="6"></duration>
+            </lnode-pulse>
+        </luceme>
 
-    <luceme name="Follow Me" id="follow_me">
-        <lnode-static step="0" sector="inner" description="Inner ring purple">
-            <illumination color="purple" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-fill step="0" sector="outer" description="Yellow segement A moves clockwise">
-            <illumination id="fill" color="yellow" brightness="0.25"></illumination>
-            <fill type="segment-move" value="fill" direction="clockwise" start="bot-3" length="7"></fill>
-            <duration seconds="6"></duration>
-        </lnode-fill>
-        <lnode-fill step="0" sector="outer" description="Yellow segement B moves clockwise">
-            <illumination id="fill" color="yellow" brightness="0.25"></illumination>
-            <fill type="segment-move" value="fill" direction="clockwise" start="top-3" length="7"></fill>
-            <duration seconds="6"></duration>
-        </lnode-fill>
-    </luceme>
+        <luceme name="Follow Me" id="follow_me">
+            <lnode-static step="0" sector="inner" description="Inner ring purple">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-fill step="0" sector="outer" description="Yellow segement A moves clockwise">
+                <illumination id="fill" color="yellow" brightness="0.25"></illumination>
+                <fill type="segment-move" value="fill" direction="clockwise" start="bot-3" length="7"></fill>
+                <duration seconds="6"></duration>
+            </lnode-fill>
+            <lnode-fill step="0" sector="outer" description="Yellow segement B moves clockwise">
+                <illumination id="fill" color="yellow" brightness="0.25"></illumination>
+                <fill type="segment-move" value="fill" direction="clockwise" start="top-3" length="7"></fill>
+                <duration seconds="6"></duration>
+            </lnode-fill>
+        </luceme>
 
-    <luceme name="Follow You" id="follow_you">
-        <lnode-static step="0" sector="inner" description="Inner ring cyan">
-            <illumination color="cyan" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-fill step="0" sector="outer" description="Yellow segement A moves clockwise">
-            <illumination id="fill" color="yellow" brightness="0.25"></illumination>
-            <fill type="segment-move" value="fill" direction="clockwise" start="bot-3" length="7"></fill>
-            <duration seconds="6"></duration>
-        </lnode-fill>
-        <lnode-fill step="0" sector="outer" description="Yellow segement B moves clockwise">
-            <illumination id="fill" color="yellow" brightness="0.25"></illumination>
-            <fill type="segment-move" value="fill" direction="clockwise" start="top-3" length="7"></fill>
-            <duration seconds="6"></duration>
-        </lnode-fill>
-    </luceme>
+        <luceme name="Follow You" id="follow_you">
+            <lnode-static step="0" sector="inner" description="Inner ring cyan">
+                <illumination color="cyan" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-fill step="0" sector="outer" description="Yellow segement A moves clockwise">
+                <illumination id="fill" color="yellow" brightness="0.25"></illumination>
+                <fill type="segment-move" value="fill" direction="clockwise" start="bot-3" length="7"></fill>
+                <duration seconds="6"></duration>
+            </lnode-fill>
+            <lnode-fill step="0" sector="outer" description="Yellow segement B moves clockwise">
+                <illumination id="fill" color="yellow" brightness="0.25"></illumination>
+                <fill type="segment-move" value="fill" direction="clockwise" start="top-3" length="7"></fill>
+                <duration seconds="6"></duration>
+            </lnode-fill>
+        </luceme>
 
-    <luceme name="Come To Me" id="come">
-        <lnode-static step="0" sector="outer" description="Outer yellow">
-            <illumination color="yellow" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="0" sector="inner" description="Inner purple">
-            <illumination color="purple" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
+        <luceme name="Come To Me" id="come">
+            <lnode-static step="0" sector="outer" description="Outer yellow">
+                <illumination color="yellow" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="0" sector="inner" description="Inner purple">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
 
-        <lnode-static step="1" sector="outer" description="Outer off, except transition sector which will overwrite.">
-            <illumination color="none" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="1" sector="inner" description="Inner purple, except transition sector which will overwrite">
-            <illumination color="purple" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="1" sector="ctm_trans" description="Transition sector yellow">
-            <illumination color="yellow" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
+            <lnode-static step="1" sector="outer" description="Outer off, except transition sector which will overwrite.">
+                <illumination color="none" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="1" sector="inner" description="Inner purple, except transition sector which will overwrite">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="1" sector="ctm_trans" description="Transition sector yellow">
+                <illumination color="yellow" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
 
-        <lnode-static step="2" sector="outer" description="Outter off.">
-            <illumination color="none" brightness="0.25"></illumination>
-            <duration seconds="2"></duration>
-        </lnode-static>
-        <lnode-static step="2" sector="inner" description="Inner purple">
-            <illumination color="purple" brightness="0.25"></illumination>
-            <duration seconds="2"></duration>
-        </lnode-static>
+            <lnode-static step="2" sector="outer" description="Outter off.">
+                <illumination color="none" brightness="0.25"></illumination>
+                <duration seconds="2"></duration>
+            </lnode-static>
+            <lnode-static step="2" sector="inner" description="Inner purple">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="2"></duration>
+            </lnode-static>
 
-        <lnode-static step="3" sector="outer" description="Outer off, except transition sector which will overwrite.">
-            <illumination color="none" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="3" sector="inner" description="Inner purple, except transition sector which will overwrite">
-            <illumination color="purple" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="3" sector="ctm_trans" description="Transition sector yellow">
-            <illumination color="yellow" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
+            <lnode-static step="3" sector="outer" description="Outer off, except transition sector which will overwrite.">
+                <illumination color="none" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="3" sector="inner" description="Inner purple, except transition sector which will overwrite">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="3" sector="ctm_trans" description="Transition sector yellow">
+                <illumination color="yellow" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
 
-        <lnode-static step="4" sector="outer" description="Outer yellow">
-            <illumination color="yellow" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
-        <lnode-static step="4" sector="inner" description="Inner purple">
-            <illumination color="purple" brightness="0.25"></illumination>
-            <duration seconds="1"></duration>
-        </lnode-static>
+            <lnode-static step="4" sector="outer" description="Outer yellow">
+                <illumination color="yellow" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
+            <lnode-static step="4" sector="inner" description="Inner purple">
+                <illumination color="purple" brightness="0.25"></illumination>
+                <duration seconds="1"></duration>
+            </lnode-static>
 
-    </luceme>
+        </luceme>
 
-    <luceme name="Danger" id="danger">
-        <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks red.">
-            <illumination id="on_state" color="red" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+        <luceme name="Danger" id="danger">
+            <lnode-blink step="0" sector="exclaim" description="Exclaim symbol blinks red.">
+                <illumination id="on_state" color="red" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Malfunction" id="Malfunction">
-        <lnode-static step="0" sector="outer" description="Outer ring red">
-            <illumination color="red" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-pulse step="0" sector="inner" description="Pulse inner ring redish">
-            <illumination id="hi_state" color="(0,50,50)" brightness="0.25"></illumination>
-            <illumination id="lo_state" color="(250,50,50)" brightness="0"></illumination>
-            <pulse vary_param="red" step="10" freq="50"></cycle>
-        </lnode-pulse>
-    </luceme>
+        <luceme name="Malfunction" id="malfunction">
+            <lnode-static step="0" sector="outer" description="Outer ring red">
+                <illumination color="red" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-pulse step="0" sector="inner" description="Pulse inner ring redish">
+                <illumination id="hi_state" color="(0,50,50)" brightness="0.25"></illumination>
+                <illumination id="lo_state" color="(250,50,50)" brightness="0"></illumination>
+                <pulse vary_param="red" step="10" freq="50"></pulse>
+            </lnode-pulse>
+        </luceme>
 
-    <luceme name="Go To Direction" id="go_direction">
-        <lnode-blink step="0" sector="directional" description="Blink sector around angle">
-            <illumination id="on_state" color="yellow" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+        <luceme name="Go To Direction" id="go_direction">
+            <lnode-blink step="0" sector="directional" description="Blink sector around angle">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Stay" id="stay">
-        <lnode-static step="0" sector="outer" description="Inner ring yellow">
-            <illumination color="yellow" brightness="0.25"><illumination/>
-            <duration seconds="6"></duration>
-        </lnode-static>
-        <lnode-blink step="0" sector="inner" description="Outer ring blinks yellow.">
-            <illumination id="on_state" color="yellow" brightness="0.25"><illumination/>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="3"><cycle/>
-        </lnode-blink>
-    </luceme>
+        <luceme name="Stay" id="stay">
+            <lnode-static step="0" sector="outer" description="Inner ring yellow">
+                <illumination color="yellow" brightness="0.25"></illumination>
+                <duration seconds="6"></duration>
+            </lnode-static>
+            <lnode-blink step="0" sector="inner" description="Outer ring blinks yellow.">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="3"></blink>
+            </lnode-blink>
+        </luceme>
 
-    <luceme name="Which Way" id="which_way">
-        <lnode-blink step="0" sector="sec-left" description="Blink left">
-            <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="1"><cycle/>
-        </lnode-blink>
-        <lnode-blink step="1" sector="sec-right" description="Blink right">
-            <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="1"><cycle/>
-        </lnode-blink>
-        <lnode-blink step="2" sector="sec-top" description="Blink top">
-            <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="1"><cycle/>
-        </lnode-blink>
-        <lnode-blink step="3" sector="sec-bot" description="Blink bot">
-            <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
-            <illumination id="off_state" color="none" brightness="0.25"><illumination/>
-            <blink period="2" iterations="1"><cycle/>
-        </lnode-blink>
-        <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
-            <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
-            <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
-            <pulse vary_param="alpha" step="0.10" freq="50"></cycle>
-            <duration seconds="2"/><duration>
-        </lnode-pulse>
-    </luceme>
+        <luceme name="Which Way" id="which_way">
+            <lnode-blink step="0" sector="sec-left" description="Blink left">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="1"></blink>
+            </lnode-blink>
+            <lnode-blink step="1" sector="sec-right" description="Blink right">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="1"></blink>
+            </lnode-blink>
+            <lnode-blink step="2" sector="sec-top" description="Blink top">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="1"></blink>
+            </lnode-blink>
+            <lnode-blink step="3" sector="sec-bot" description="Blink bot">
+                <illumination id="on_state" color="yellow" brightness="0.25"></illumination>
+                <illumination id="off_state" color="none" brightness="0.25"></illumination>
+                <blink period="2" iterations="1"></blink>
+            </lnode-blink>
+            <lnode-pulse step="0" sector="inner" description="Pulse full rings blue-ish">
+                <illumination id="hi_state" color="(0,50,50)" brightness="0.20"></illumination>
+                <illumination id="lo_state" color="(0,50,50)" brightness="1.0"></illumination>
+                <pulse vary_param="alpha" step="0.10" freq="50"></pulse>
+                <duration seconds="2"></duration>
+            </lnode-pulse>
+        </luceme>
 
-    <luceme name="Remaining Battery" id="battery_remaining">
-        <lnode-fill step="0" sector="outer" description="Outer ring fills to value.">
-                <illumination id="low" color="red" brightness="0.25"></illumination>
-                <illumination id="mid" color="yellow" brightness="0.25"></illumination>
-                <illumination id="high" color="green" brightness="0.25"></illumination>
-                <fill type="expand-value" direction="clockwise" start="top"></fill>
-                <color-map target="value" mapping="low=0:20;mid=20:50;high=50:100"></color-map>
-                <duration seconds="3"></duration>
-        </lnode-fill>
-        <lnode-fill step="1" sector="outer" description="Outer ring reverses its fill">
-                <illumination id="low" color="red" brightness="0.25"></illumination>
-                <illumination id="mid" color="yellow" brightness="0.25"></illumination>
-                <illumination id="high" color="green" brightness="0.25"></illumination>
-                <fill type="contract-value" direction="counter-clockwise" start="value"></fill>
-                <color-map target="value" mapping="low=0:20;mid=20:50;high=50:100"></color-map>
-                <duration seconds="3"></duration>
-        </lnode-fill>
-    </luceme>
-
-</lucemes>
+        <luceme name="Remaining Battery" id="battery_remaining">
+            <lnode-fill step="0" sector="outer" description="Outer ring fills to value.">
+                    <illumination id="low" color="red" brightness="0.25"></illumination>
+                    <illumination id="mid" color="yellow" brightness="0.25"></illumination>
+                    <illumination id="high" color="green" brightness="0.25"></illumination>
+                    <fill type="expand-value" direction="clockwise" start="top"></fill>
+                    <color-map target="value" mapping="low=0:20;mid=20:50;high=50:100"></color-map>
+                    <duration seconds="3"></duration>
+            </lnode-fill>
+            <lnode-fill step="1" sector="outer" description="Outer ring reverses its fill">
+                    <illumination id="low" color="red" brightness="0.25"></illumination>
+                    <illumination id="mid" color="yellow" brightness="0.25"></illumination>
+                    <illumination id="high" color="green" brightness="0.25"></illumination>
+                    <fill type="contract-value" direction="counter-clockwise" start="value"></fill>
+                    <color-map target="value" mapping="low=0:20;mid=20:50;high=50:100"></color-map>
+                    <duration seconds="3"></duration>
+            </lnode-fill>
+        </luceme>
+    </lucemes>
+</hreye-definition>
