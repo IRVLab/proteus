@@ -36,10 +36,10 @@
         </symbols>
 
         <vectors>
-            <vector name="RCVM" type="explicit_communication" pkg="proteus_loco_rcvm" symfile="loco_diver-signal_kineme.sdf"></vector>
-            <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_loco_oled" symfile="loco_diver-signal_digitaldisplay.sdf"></vector>
-            <vector name="ActiveHREye" type="explicit_communication" pkg="proteus_hreye" symfile="loco_diver-signal_active-luceme.sdf"></vector>
-            <vector name="OcularHREye" type="gaze_indication" pkg="proteus_hreye" symfile="loco_diver-signal_ocular-luceme.sdf"></vector>
+            <vector name="RCVM" type="explicit_communication" pkg="proteus_loco_rcvm" file="loco_diver-signal_kineme.sdf"></vector>
+            <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_loco_oled" file="loco_diver-signal_digitaldisplay.sdf"></vector>
+            <vector name="ActiveHREye" type="explicit_communication" pkg="proteus_hreye" file="loco_diver-signal_active-luceme.sdf"></vector>
+            <vector name="OcularHREye" type="gaze_indication" pkg="proteus_hreye" file="loco_diver-signal_ocular-luceme.sdf"></vector>
         </vectors>
 
         <actions>

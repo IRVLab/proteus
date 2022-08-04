@@ -39,16 +39,14 @@ if __name__ == '__main__':
     rospy.loginfo('Putting vector info on the parameter server...')
     # Put up vector information on the ROS parameter server
     for vector in lang.in_vectors:
-        vector_dict = {"definition_file":vector.definition_file, "type":vector.type}
+        vector_dict = {"definition_file":vector.definition_file, "pkg":vector.pkg ,"type":vector.type}
         rospy.set_param("vectors/in/%s"%(vector.name), vector_dict)
 
     for vector in lang.out_vectors:
-        vector_dict = {"definition_file":vector.definition_file, "type":vector.type}
+        vector_dict = {"definition_file":vector.definition_file, "pkg":vector.pkg ,"type":vector.type}
         rospy.set_param("vectors/out/%s"%(vector.name), vector_dict)
 
     # TODO Also put up other information as necessary
-
-
 
     rospy.loginfo('Language server initialized, ready for business!')
     # Time to spin forever

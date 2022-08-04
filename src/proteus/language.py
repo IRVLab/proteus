@@ -66,7 +66,7 @@ class Language(object):
                     elif gc.tag == 'vectors':
                         for vector in gc:
                             v = Vector('out')
-                            v.parse_from_xml(vector, self.directory)
+                            v.parse_from_xml(vector)
                             self.out_vectors.append(v)
                     elif gc.tag == 'actions':
                         continue
