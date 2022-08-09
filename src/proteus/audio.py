@@ -4,6 +4,9 @@ class Audio(object):
         self.speed = 1
         self.filename = "duck_test.ogg"
 
+    def __str__(self):
+        return "AUDIO (vol {} speed {}), {}.".format(self.volume, self.speed, self.filename)
+
     def parse_from_xml(self, xml):
         self.volume = int(xml.get('volume'))
         self.speed = float(xml.get('speed'))
@@ -13,6 +16,9 @@ class VariableAudio(Audio):
     def __init__(self):
         super().__init__()
         self.options = list()
+    
+    def __str__(self):
+        return "VAR-AUDIO (vol {} speed {}), {}.".format(self.volume, self.speed, self.filename)
 
     def parse_from_xml(self, xml):
         super().parse_from_xml(xml)
