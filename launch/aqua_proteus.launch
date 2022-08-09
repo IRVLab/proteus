@@ -1,6 +1,6 @@
 <launch>
     <group ns="aqua/proteus">
-        <param name="language_definition_file" type="string" value="$(find proteus)/language_definitions/aqua_diver-signal/aqua_diver-signal.ldf" ></param>
+        <param name="language_definition_file" type="string" value="$(find proteus)/language_definitions/aqua_diver-signal.ldf" ></param>
         <include file="$(find proteus)/launch/proteus.launch"></include>
     </group>
 </launch>

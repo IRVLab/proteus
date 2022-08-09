@@ -18,8 +18,8 @@ class SNodeClip(SNode):
         self.audios = list()
 
     def __str__(self):
-        re = "{} AUDIOS[".format(super().__str__(), self)
-        for k, a in self.audios.items():
+        ret = "{} [".format(super().__str__(), self)
+        for a in self.audios:
             ret += str(a) + ' '
         ret += "]"
         return ret
@@ -45,8 +45,8 @@ class SNodeSpeech(SNode):
         self.speeches = list()
 
     def __str__(self):
-        re = "{} SPEECH[".format(super().__str__(), self)
-        for k, s in self.speeches.items():
+        ret = "{} [".format(super().__str__(), self)
+        for s in self.speeches:
             ret += str(s) + ' '
         ret += "]"
         return ret
@@ -58,11 +58,11 @@ class SNodeSpeech(SNode):
             if item.tag == 'speech':
                 s = Speech()
                 s.parse_from_xml(item)
-                self.audios.append(s)
+                self.speeches.append(s)
             elif item.tag =='variable-speech':
                 s = VariableSpeech()
                 s.parse_from_xml(item)
-                self.audios.append(s)
+                self.speeches.append(s)
             else:
                 print("Unexpected component of SNodeSpeech")
 
@@ -74,10 +74,10 @@ class Soneme(object):
         self.snodes = list()
 
     def __str__(self):
-        re = "SON (%s) %s\n"%(self.id, self.name)
-        for s in self.snodes:
-            re += "  ... %s\n"%(str(s))
-        return re
+        ret = "SON (%s) %s\n"%(self.id, self.name)
+        for snode in self.snodes:
+            ret += "  ... %s\n"%(str(snode))
+        return ret
 
     def set_call_type(self, call_type):
         self.call_type = call_type

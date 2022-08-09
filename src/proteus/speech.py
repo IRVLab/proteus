@@ -9,10 +9,10 @@ class Speech(object):
 
     def parse_from_xml(self, xml):
         self.volume = int(xml.get('volume'))
-        self.speed = int(xml.get('speed'))
-        self.text = int(xml.get('text'))
+        self.speed = float(xml.get('speed'))
+        self.text = str(xml.get('text'))
 
-class VariableSpeech(object):
+class VariableSpeech(Speech):
     def __init__(self):
         super().__init__()
 

@@ -1,7 +1,7 @@
 import rospkg
 rospack = rospkg.RosPack()
 
-class HREyeConfig(object):
+class SirenConfig(object):
     def __init__(self):
         self.clip_location = ""
         self.low_volume = 0
@@ -23,5 +23,5 @@ class HREyeConfig(object):
 
             elif item.tag == 'voice':
                 self.voice_language = str(item.get('lang'))
-                self.voice_id = str(item.get('id'))
-                self.voice_wpm = str(item.get('wpm'))
+                self.voice_id = int(item.get('id'))
+                self.voice_wpm = int(item.get('wpm'))
