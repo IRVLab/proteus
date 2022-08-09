@@ -40,6 +40,9 @@
             <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_loco_oled" file="loco_diver-signal_digitaldisplay.sdf"></vector>
             <vector name="ActiveHREye" type="explicit_communication" pkg="proteus_hreye" file="loco_diver-signal_active-luceme.sdf"></vector>
             <vector name="OcularHREye" type="gaze_indication" pkg="proteus_hreye" file="loco_diver-signal_ocular-luceme.sdf"></vector>
+            <vector name="ClipSIREN" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_clip-soneme.sdf"></vector>
+            <vector name="TTSSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tts-soneme.sdf"></vector>
+            <vector name="TonalSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tone-soneme.sdf"></vector>
         </vectors>
 
         <actions>

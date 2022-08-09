@@ -4,11 +4,11 @@ from proteus.sector import Sector
 from proteus.color import Color
 
 class HREyeConfig(object):
-    def __init__(self, rs=dict(), ss=dict(), cs=dict(), ds=Luceme()):
-        self.rings = rs
-        self.sectors = ss
-        self.colors = cs
-        self.default_state = ds
+    def __init__(self):
+        self.rings = dict()
+        self.sectors = dict()
+        self.colors = dict()
+        self.default_state = Luceme()
 
     def __str__(self):
         ret = "HREyeConfig: \n  Rings:\n"
