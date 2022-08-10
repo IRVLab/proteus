@@ -15,7 +15,7 @@ class SirenConfig(object):
             if item.tag == 'clips':
                 package = str(item.get('pkg'))
                 directory = str(item.get('directory'))
-                self.clip_location = rospack.find(package) + "/" + directory
+                self.clip_location = rospack.get_path(package) + "/" + directory
 
             elif item.tag == 'volume-range':
                 self.low_volume = int(item.get('low'))
