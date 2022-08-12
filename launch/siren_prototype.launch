@@ -1,0 +1,6 @@
+<launch>
+    <group ns="loco/proteus">
+        <param name="language_definition_file" type="string" value="$(find proteus)/language_definitions/siren_prototype.ldf" ></param>
+        <include file="$(find proteus)/launch/proteus.launch"></include>
+    </group>
+</launch>
