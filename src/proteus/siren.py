@@ -1,5 +1,6 @@
 import rospkg
 rospack = rospkg.RosPack()
+from proteus.synth_track import SynthTrack
 
 class SirenConfig(object):
     def __init__(self):
@@ -9,6 +10,7 @@ class SirenConfig(object):
         self.voice_language = "us"
         self.voice_id = 1
         self.voice_wpm = 120
+        self.synth_tracks = dict()
     
     def parse_from_xml(self, xml):
         for item in xml:
@@ -25,3 +27,8 @@ class SirenConfig(object):
                 self.voice_language = str(item.get('lang'))
                 self.voice_id = int(item.get('id'))
                 self.voice_wpm = int(item.get('wpm'))
+
+            elif item.tag == 'synth-track':
+                st = SynthTrack()
+                st.parse_from_xml(item)
+                self.synth_tracks[st.id] = st

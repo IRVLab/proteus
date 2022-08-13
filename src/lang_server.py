@@ -25,7 +25,6 @@ if __name__ == '__main__':
     lang = Language()
     lang.parse_from_xml(root)
     
-    
     rospy.loginfo('Putting symbol info on the parameter server...')
     # Put language symbols up on the ROS parameter server
     for symbol in lang.in_symbols:

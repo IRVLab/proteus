@@ -6,4 +6,4 @@ class Duration(object):
         return "DURATION of {} seconds.".format(self.seconds)
 
     def parse_from_xml(self, xml):
-        self.second = float(xml.get('seconds'))
+        self.seconds = float(xml.get('seconds'))

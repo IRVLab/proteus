@@ -1,6 +1,7 @@
 from proteus.node import Node
 from proteus.audio import Audio, VariableAudio
 from proteus.speech import Speech, VariableSpeech
+from .duration import Duration
 from proteus.tone import Tone, VariableTone
 
 class SNode(Node):
@@ -75,9 +76,14 @@ class SNodeTone(SNode):
 
     def __str__(self):
         ret = "{} [".format(super().__str__(), self)
-        for t in self.tones:
-            ret += str(t) + ' '
-        ret += "]"
+        if len(self.tones) > 0 :
+            for t in self.tones:
+                ret += str(t) + ' '
+        else:
+            ret += "Rest"
+
+        ret += "]; "
+        ret += str(self.duration)
         return ret
 
     def parse_from_xml(self, xml):
@@ -92,6 +98,10 @@ class SNodeTone(SNode):
                 t = VariableTone()
                 t.parse_from_xml(item)
                 self.speeches.append(t)
+            elif item.tag == 'duration':
+                d = Duration()
+                d.parse_from_xml(item)
+                self.duration = d
             else:
                 print("Unexpected component of SNodeTone")
 
@@ -129,6 +139,10 @@ class Soneme(object):
                 self.snodes.append(s)
             elif type == 'snode-speech':
                 s = SNodeSpeech()
+                s.parse_from_xml(sdef)
+                self.snodes.append(s)
+            elif type == 'snode-tone':
+                s = SNodeTone()
                 s.parse_from_xml(sdef)
                 self.snodes.append(s)
             else:

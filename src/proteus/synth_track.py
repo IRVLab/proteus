@@ -7,6 +7,9 @@ class SynthTrack(object):
         self.attack = None
         self.decay = None
 
+    def set_idx(self, idx):
+        self.index = idx
+
     def parse_from_xml(self, xml):
         self.id = str(xml.get('id'))
         self.wave_type = str(xml.get('wave'))
