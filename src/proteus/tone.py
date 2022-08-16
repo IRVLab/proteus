@@ -114,15 +114,24 @@ class RunTone(object):
 
         return ret_vals
 
-
-
-
-class VariableTone(Tone):
+class VariableTone(object):
     def __init__(self):
-        super().__init__()
+        self.track_id = None
+        self.parameter = None
+        self.options = None
     
     def __str__(self):
         return "VAR-AUDIO ".format()
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        self.track_id = str(xml.get('track'))
+        self.parameter = str(xml.get('param'))
+        self.options = list()
+
+        options = str(xml.get('options')).split(';')
+        for o in options:
+            note = o[:-1]
+            octave = int(o[-1])
+            self.options.append([note, octave])
+
+    
