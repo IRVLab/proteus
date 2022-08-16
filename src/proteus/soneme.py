@@ -1,8 +1,9 @@
 from proteus.node import Node
 from proteus.audio import Audio, VariableAudio
 from proteus.speech import Speech, VariableSpeech
+from .quantity import Quantity
 from .duration import Duration
-from proteus.tone import Tone, VariableTone
+from proteus.tone import Tone, RunTone, VariableTone
 
 class SNode(Node):
     def __init__(self):
@@ -73,6 +74,7 @@ class SNodeTone(SNode):
         super().__init__()
         self.tones = list()
         self.duration = None
+        self.quantity = None
 
     def __str__(self):
         ret = "{} [".format(super().__str__(), self)
@@ -97,11 +99,19 @@ class SNodeTone(SNode):
             elif item.tag =='variable-tone':
                 t = VariableTone()
                 t.parse_from_xml(item)
-                self.speeches.append(t)
+                self.tones.append(t)
+            elif item.tag =='run-tone':
+                t = RunTone()
+                t.parse_from_xml(item)
+                self.tones.append(t)
             elif item.tag == 'duration':
                 d = Duration()
                 d.parse_from_xml(item)
                 self.duration = d
+            elif item.tag == 'quantity':
+                q = Quantity()
+                q.parse_from_xml(item)
+                self.quantity = q
             else:
                 print("Unexpected component of SNodeTone")
 
