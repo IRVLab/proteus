@@ -1,7 +1,7 @@
 import numpy as np
 
 
-notes_sharps = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a' ,' a#', 'b']
+notes_sharps = ['c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#', 'a' ,'a#', 'b']
 notes_flats = ['c', 'db', 'd', 'eb', 'e', 'f', 'gb', 'g', 'ab', 'a' ,' bb', 'b']
 
 class Tone(object):
@@ -103,9 +103,15 @@ class RunTone(object):
         # Now we select the ones we need, decide on durations based on the glissando value, and return.
 
         idx = min(range(len(raw_values)), key=lambda i: abs(raw_values[i]-value)) # This isn't super fast, but the list is going to be short and sorted.
-        notes = raw_notes[:idx]
-        octaves = raw_octaves[:idx]
-        durations = [duration/len(notes)] * len(notes)
+    
+        if idx != 0:
+            notes = raw_notes[:idx]
+            octaves = raw_octaves[:idx]
+            durations = [duration/len(notes)] * len(notes)
+        else: 
+            notes = [raw_notes[0]]
+            octaves = [raw_octaves[0]]
+            durations = [duration]
 
         for k in range(len(notes)):
             ret_vals.append([notes[k], octaves[k], durations[k]])
