@@ -1,8 +1,8 @@
 class Velocity(object):
-    def __init__(self, surge, sway, heave):
-        self.surge = float(surge)
-        self.sway = float(sway)
-        self.heave = float(heave)
+    def __init__(self):
+        self.surge = None
+        self.sway = None
+        self.heave = None
 
     def __str__(self):
         return "VELOCITY {} surge, {} sway, {} heave".format(self.surge, self.sway, self.heave)
