@@ -8,7 +8,7 @@ class Speech(object):
         return "SPEECH (vol {} speed {}), {}.".format(self.volume, self.speed, self.text)
 
     def parse_from_xml(self, xml):
-        self.volume = int(xml.get('volume'))
+        self.volume = float(xml.get('volume'))
         self.speed = float(xml.get('speed'))
         self.text = str(xml.get('text'))
 

@@ -8,7 +8,7 @@ class Audio(object):
         return "AUDIO (vol {} speed {}), {}.".format(self.volume, self.speed, self.filename)
 
     def parse_from_xml(self, xml):
-        self.volume = int(xml.get('volume'))
+        self.volume = float(xml.get('volume'))
         self.speed = float(xml.get('speed'))
         self.filename = str(xml.get('filename'))
 
