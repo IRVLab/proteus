@@ -37,8 +37,8 @@
 
         <vectors>
             <vector name="ClipSIREN" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_clip-soneme.sdf"></vector>
-            <vector name="TTSSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tts-soneme.sdf"></vector>
-            <vector name="TonalSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tone-soneme.sdf"></vector>
+            <vector name="TTSSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tts-soneme_v1.sdf"></vector>
+            <vector name="TonalSiren" type="explicit_communication" pkg="proteus_siren" file="loco_diver-signal_tone-soneme_v1.sdf"></vector>
         </vectors>
 
         <actions>
