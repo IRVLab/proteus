@@ -10,7 +10,7 @@ class SirenConfig(object):
         self.voice_id = 1
         self.voice_wpm = 120
         self.synth_tracks = dict()
-        self.save_wavs = True
+        self.save_wavs = False
     
     def parse_from_xml(self, xml):
         for item in xml:
