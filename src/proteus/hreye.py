@@ -5,13 +5,16 @@ from proteus.color import Color
 
 class HREyeConfig(object):
     def __init__(self):
+        self.number_of_eyes = 0
+        self.mode = ""
+        self.rate = 10
         self.rings = dict()
         self.sectors = dict()
         self.colors = dict()
         self.default_state = Luceme()
 
     def __str__(self):
-        ret = "HREyeConfig: \n  Rings:\n"
+        ret = "HREyeConfig: [{} HREyes, {} mode\n  Rings:\n".format(self.number, self.mode)
         for k, r in self.rings.items():
             ret += "       {}\n".format(r)
 
@@ -28,6 +31,9 @@ class HREyeConfig(object):
         
     
     def parse_from_xml(self, xml):
+        self.number_of_eyes = int(xml.get("number"))
+        self.mode = str(xml.get("mode"))
+        self.rate = int(xml.get("rate"))
         for item in xml:
             if item.tag == 'rings':
                 for rdef in item:

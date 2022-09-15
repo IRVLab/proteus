@@ -46,6 +46,9 @@ class LNodeStatic(LNode):
             else:
                 print("Unexpected component of LNodeStatic")
 
+    def get_duration_seconds(self):
+        return self.duration.seconds
+
 
 class LNodeBlink(LNode):
     def __init__(self):
@@ -72,6 +75,9 @@ class LNodeBlink(LNode):
                 self.blink.parse_from_xml(item)
             else:
                 print("Unexpected component of LNodeStatic")
+
+    def get_duration_seconds(self):
+        return (self.blink.period * self.blink.iterations)
 
 class LNodePulse(LNode):
     def __init__(self):
@@ -101,6 +107,9 @@ class LNodePulse(LNode):
             else:
                 print("Unexpected component of LNodeStatic")
 
+    def get_duration_seconds(self):
+        return self.duration.seconds
+
 class LNodeFill(LNode):
     def __init__(self):
         super().__init__()
@@ -115,7 +124,6 @@ class LNodeFill(LNode):
             ret += str(i) + ' '
         ret += "] {} {} {}".format(self.fill, self.color_map, self.duration)
         return ret
-
 
     def parse_from_xml(self, xml):
         super().parse_from_xml(xml)
@@ -133,6 +141,9 @@ class LNodeFill(LNode):
                 self.duration.parse_from_xml(item)
             else:
                 print("Unexpected component of LNodeStatic")
+
+    def get_duration_seconds(self):
+        return self.duration.seconds
 
 
 class Luceme(object):
@@ -188,3 +199,15 @@ class Luceme(object):
             
             else:
                 print("UNRECOGNIZED LNODE TYPE.")
+
+    def get_luceme_duration(self):
+        step_durations = []
+        current_step = 0
+        for l in self.lnodes:
+            if l.step == current_step:
+                step_durations.append(l.get_duration_seconds())
+                current_step += 1
+            else:
+                continue
+
+        return step_durations
