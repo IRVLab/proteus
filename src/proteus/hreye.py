@@ -14,7 +14,7 @@ class HREyeConfig(object):
         self.default_state = Luceme()
 
     def __str__(self):
-        ret = "HREyeConfig: [{} HREyes, {} mode\n  Rings:\n".format(self.number, self.mode)
+        ret = "HREyeConfig: [{} HREyes, {} mode\n  Rings:\n".format(self.number_of_eyes, self.mode)
         for k, r in self.rings.items():
             ret += "       {}\n".format(r)
 
