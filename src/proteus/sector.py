@@ -19,6 +19,24 @@ class SectorSegment(object):
         self.start = str(xml.get('start'))
         self.end = str(xml.get('end'))
 
+    def resolve_index_formula(self, formula, ring):
+        formula = formula.replace("start", str(ring.start))
+        formula = formula.replace("end", str(ring.end))
+        formula = formula.replace("top", str(ring.top))
+        formula = formula.replace("left", str(ring.left))
+        formula = formula.replace("bot", str(ring.bot))
+        formula = formula.replace("right", str(ring.right))
+        index = eval(formula)
+
+        # Enforcing ring index wrapping
+        if index < ring.start:
+            index += ring.end
+        if index > ring.end:
+            index -= ring.end
+
+        return index
+
+
     def resolve_indexes(self, rings):
         if self.resolved:
             return 
@@ -26,34 +44,9 @@ class SectorSegment(object):
         relevant_ring = rings[self.ring]
         start_formula = self.start
         end_formula = self.end
-        
-        start_formula = start_formula.replace("start", str(relevant_ring.start))
-        start_formula = start_formula.replace("end", str(relevant_ring.end))
-        start_formula = start_formula.replace("top", str(relevant_ring.top))
-        start_formula = start_formula.replace("left", str(relevant_ring.left))
-        start_formula = start_formula.replace("bot", str(relevant_ring.bot))
-        start_formula = start_formula.replace("right", str(relevant_ring.right))
-        self.start = eval(start_formula)
 
-        end_formula = end_formula.replace("start", str(relevant_ring.start))
-        end_formula = end_formula.replace("end", str(relevant_ring.end))
-        end_formula = end_formula.replace("top", str(relevant_ring.top))
-        end_formula = end_formula.replace("left", str(relevant_ring.left))
-        end_formula = end_formula.replace("bot", str(relevant_ring.bot))
-        end_formula = end_formula.replace("right", str(relevant_ring.right))
-        self.end = eval(end_formula)
-
-        # Enforcing ring index wrapping
-        if self.start < relevant_ring.start:
-            self.start + relevant_ring.end
-        if self.end < relevant_ring.start:
-            self.end + relevant_ring.end
-
-        # Enforcing ring index wrapping
-        if self.start > relevant_ring.end:
-            self.start - relevant_ring.end
-        if self.end > relevant_ring.end:
-            self.end - relevant_ring.end
+        self.start = self.resolve_index_formula(start_formula, relevant_ring)
+        self.end = self.resolve_index_formula(end_formula, relevant_ring)
 
         if self.start < self.end:
             self.indexes = list(range(self.start, self.end+1))
