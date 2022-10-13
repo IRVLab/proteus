@@ -69,8 +69,8 @@ class SectorSegment(object):
             start_b = relevant_ring.start
             end_b = self.end
 
-            self.indexes = list(range(start_a, end_a))
-            self.indexes.extend(list(range(start_b, end_b)))
+            self.indexes = list(range(start_a, end_a + 1))
+            self.indexes.extend(list(range(start_b, end_b + 1)))
 
         self.resolved = True
 
