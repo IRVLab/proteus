@@ -4,6 +4,7 @@ class Fill(object):
       self.direction = direction
       self.start = start
       self.length = None
+      self.range = None
         
     def __str__(self):
         return "FILL {}, {} starting from {}.".format(self.type, self.direction, self.start)
@@ -15,3 +16,9 @@ class Fill(object):
 
       if self.type == 'segment-move':
         self.length = int(xml.get('length'))
+      elif self.type == 'epxand-value':
+        range_str = str(xml.get('range'))
+        self.range = (int(range_str.split(':')[0]),int(range_str.split(':')[1]))
+      elif self.type == 'contract-value':
+        range_str = str(xml.get('range'))
+        self.range = (int(range_str.split(':')[0]),int(range_str.split(':')[1]))

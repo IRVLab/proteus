@@ -56,7 +56,11 @@ class HREyeConfig(object):
             elif item.tag == 'default-state':
                 self.default_state.parse_from_xml(item, default_state=True) # Default state is defined as a luceme, so we can just parse from there.
 
+    def associate_rings(self):
+        for k, s in self.sectors.items():
+            s.associate_rings(self.rings)
+
     # Resolve sector indexes from their definition form to their actual coordinates.
     def resolve_sector_indexes(self):
         for k, s in self.sectors.items():
-            s.resolve_indexes(self.rings)
+            s.resolve_indexes()
