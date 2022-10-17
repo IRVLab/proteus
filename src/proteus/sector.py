@@ -111,7 +111,6 @@ class PointRelativeSectorSegment(object):
         self.start = str(xml.get('start'))
         self.max_length = int(xml.get('max_length'))
 
-
     # TODO return a dynamic sector, based on the input data, the center point, and width of the relative sector.
     def get_indexes(self, data):
         pass

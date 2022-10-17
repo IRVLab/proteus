@@ -16,7 +16,7 @@ class Fill(object):
 
       if self.type == 'segment-move':
         self.length = int(xml.get('length'))
-      elif self.type == 'epxand-value':
+      elif self.type == 'expand-value':
         range_str = str(xml.get('range'))
         self.range = (int(range_str.split(':')[0]),int(range_str.split(':')[1]))
       elif self.type == 'contract-value':
