@@ -1,9 +1,9 @@
 class Quantity(object):
-    def __init__(self, param=None, disp=None, max=None, min=None):
+    def __init__(self, param=None, disp=None, amax=None, amin=None):
         self.parameter = param
         self.display_on= disp
-        self.max_amount = max
-        self.min_amount = min
+        self.max_amount = amax
+        self.min_amount = amin
         
 
     def __str__(self):
