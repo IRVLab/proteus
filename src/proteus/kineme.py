@@ -8,29 +8,29 @@ from proteus.quantity import Quantity
 
 class KNode(Node):
     def __init__(self):
-        super().__init__()
+        super(KNode, self).__init__()
         self.duration = Duration()
 
     def __str__(self):
-        return "{0} DUR({1.duration})".format(super().__str__(), self)
+        return "{0} DUR({1.duration})".format(super(KNode, self).__str__(), self)
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNode, self).parse_from_xml(xml)
         for item in xml:
             if item.tag == 'duration':
                 self.duration.parse_from_xml(item)
 
 class KNodeAbsolute(KNode):
     def __init__(self):
-        super().__init__()
+        super(KNodeAbsolute, self).__init__()
         self.orientation = Orientation()
         self.velocity = Velocity()
 
     def __str__(self):
-        return "{0} ORR({1.orientation}) VEL({1.velocity}) ".format(super().__str__(), self)
+        return "{0} ORR({1.orientation}) VEL({1.velocity}) ".format(super(KNodeAbsolute, self).__str__(), self)
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNodeAbsolute, self).parse_from_xml(xml)
         for item in xml:
             if item.tag == 'orientation':
                 self.orientation.parse_from_xml(item)
@@ -40,25 +40,25 @@ class KNodeAbsolute(KNode):
 
 class KNodePause(KNode):
     def __init__(self):
-        super().__init__()
+        super(KNodePause, self).__init__()
         
     def __str__(self):
-        return "{0} ".format(super().__str__(), self)
+        return "{0} ".format(super(KNodePause, self).__str__(), self)
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNodePause, self).parse_from_xml(xml)
 
 class KNodeDepth(KNode):
     def __init__(self):
-        super().__init__()
+        super(KNodeDepth, self).__init__()
         self.depth = Depth()
         self.velocity = Velocity()
         
     def __str__(self):
-        return "{0} DEPTH {1.depth} VEL {1.velocity}".format(super().__str__(), self)
+        return "{0} DEPTH {1.depth} VEL {1.velocity}".format(super(KNodeDepth, self).__str__(), self)
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNodeDepth, self).parse_from_xml(xml)
         for item in xml:
             if item.tag == 'depth':
                 self.depth.parse_from_xml(item)
@@ -67,23 +67,23 @@ class KNodeDepth(KNode):
 
 class KNodeDirectional(KNode):
     def __init__(self):
-        super().__init__()
+        super(KNodeDirectional, self).__init__()
 
     def __str__(self):
-        return "{0} ".format(super().__str__())
+        return "{0} ".format(super(KNodeDirectional, self).__str__())
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNodeDirectional, self).parse_from_xml(xml)
 
 class KNodeQuantity(KNode):
     def __init__(self):
-        super().__init__()
+        super(KNodeQuantity, self).__init__()
         self.quantity = Quantity()
     def __str__(self):
-        return "{0} Quantity {1.quantity}".format(super().__str__(), self)
+        return "{0} Quantity {1.quantity}".format(super(KNodeQuantity, self).__str__(), self)
 
     def parse_from_xml(self, xml):
-        super().parse_from_xml(xml)
+        super(KNodeQuantity, self).parse_from_xml(xml)
         for item in xml:
             if item.tag == 'quantity':
                 self.quantity.parse_from_xml(item)
