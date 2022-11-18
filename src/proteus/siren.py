@@ -1,6 +1,7 @@
 import rospkg
 rospack = rospkg.RosPack()
 from proteus.synth_track import SynthTrack
+from proteus.dynamic_input import DynamicInput
 
 class SirenConfig(object):
     def __init__(self):
@@ -11,6 +12,7 @@ class SirenConfig(object):
         self.voice_wpm = 120
         self.synth_tracks = dict()
         self.save_wavs = False
+        self.dynamic_input = None
     
     def parse_from_xml(self, xml):
         for item in xml:
@@ -30,3 +32,8 @@ class SirenConfig(object):
                 st = SynthTrack()
                 st.parse_from_xml(item)
                 self.synth_tracks[st.id] = st
+
+            elif item.tag == 'dynamic-input':
+                dyn_input = DynamicInput()
+                dyn_input.parse_from_xml(item)
+                self.dynamic_input = dyn_input
