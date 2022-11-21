@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+    <meta>
+        <name>PROTEUS Diver-Signal Based Language</name>
+        <robot>LoCO-AUV</robot>
+        <description>A PROTEUS language designed for testing PROTEUS on Aqua, with symbols based on based on iterative coding of diver hand signal languages.</description>
+	<directory>/home/michael/proteus_ws/src/proteus/language_definitions/loco_diver-signal/</directory>
+    </meta>
+
+    <input>
+        <symbols>
+        </symbols>
+
+        <vectors>
+        </vectors>
+
+        <actions>
+        </actions>
+    </input>
+
+    <output>
+        <symbols>
+            <symbol name="Affirmative" id="affirmative" call_type="trigger" description="A confirmation response indicating Yes, I will, etc." tags="conversational,control"></symbol>
+            <symbol name="Negative" id="negative" call_type="trigger" description="A declining response indicating No, I will not, etc." tags="conversational,control"></symbol>
+            <symbol name="Attention" id="attention" call_type="trigger" description="A command telling the interactant to pay attention" tags="conversational"></symbol>
+            <symbol name="Follow Me" id="follow_me" call_type="trigger" description="A command requesting the interactant to follow the AUV" tags="commands"></symbol>
+            <symbol name="Come To Me" id="come" call_type="trigger" description="A command telling the interactnat to come to the AUV" tags="commands"></symbol>
+            <symbol name="Danger" id="danger" call_type="trigger" description="An informational phrase telling interactants that there is danger nearby." tags="information"></symbol>
+            <symbol name="Malfunction" id="malfunction" call_type="trigger" description="An informational phrase informing interactants of an internal malfunction." tags="information"></symbol>
+            <symbol name="Go Left" id="go_left" call_type="trigger" description="A response requesting the interactant to move in a direction" tags="commands"></symbol>
+            <symbol name="Go Right" id="go_right" call_type="trigger" description="A response requesting the interactant to move in a direction" tags="commands"></symbol>
+            <symbol name="Go Forward" id="go_forward" call_type="trigger" description="A response requesting the interactant to move in a direction" tags="commands"></symbol>
+            <symbol name="Go Back" id="go_back" call_type="trigger" description="A response requesting the interactant to move in a direction" tags="commands"></symbol>
+            <symbol name="Stay" id="stay" call_type="trigger" description="A command telling the interactant to stay where they are." tags="commands"></symbol>
+            <symbol name="Remaining Time" id="time_remaining" call_type="quantity" description="An informational phrase telling the interactant how much time is left." tags="information"></symbol>
+            <symbol name="Follow You" id="follow_you" call_type="trigger" description="An informational phrase telling the interactant that the AUV will follow them" tags="information"></symbol>
+            <symbol name="Wait For Command" id="wait_for_command" call_type="trigger" description="A question asking the interactant for input of some kind." tags="conversational,question"></symbol>
+            <symbol name="Which Way" id="which_way" call_type="trigger" description="A question asking the interactant which way to go." tags="question"></symbol>
+        </symbols>
+
+        <vectors>
+            <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_loco_oled" file="loco_acvs_digitaldisplay.sdf"></vector>
+            <vector name="TTSSiren" type="explicit_communication" pkg="proteus_siren" file="loco_acvs_tts-soneme.sdf"></vector>
+            <vector name="TonalSiren" type="explicit_communication" pkg="proteus_siren" file="loco_acvs_tone-soneme.sdf"></vector>
+            <vector name="ActiveHREye" type="explicit_communication" pkg="proteus_hreye" file="loco_acvs_active-luceme.sdf"></vector>
+            <vector name="OcularHREye" type="implicit_communication" pkg="proteus_hreye" file="loco_acvs_ocular-luceme.sdf"></vector>
+            <vector name="RCVM" type="explicit_communication" pkg="proteus_rcvm_loco" file="loco_acvs_dg_kineme.sdf"></vector>
+        </vectors>
+
+        <actions>
+        </actions>
+
+    </output>
+    
+    <state>
+    </state>
+
+    <context>
+    </context>
+
+    <actions>
+    </actions>
+    
+</language>
