@@ -5,6 +5,7 @@ from proteus.velocity import Velocity
 from proteus.depth import Depth
 from proteus.duration import Duration
 from proteus.quantity import Quantity
+from proteus.loco_command import LoCOCommand
 
 class KNode(Node):
     def __init__(self):
@@ -19,6 +20,20 @@ class KNode(Node):
         for item in xml:
             if item.tag == 'duration':
                 self.duration.parse_from_xml(item)
+
+class KNodeDeadGuess(KNode):
+    def __init__(self):
+        super(KNodeDeadGuess, self).__init__()
+        self.command = LoCOCommand()
+
+    def __str__(self):
+        return "{0} CMD({1.command}) ".format(super(KNodeDeadGuess, self).__str__(), self)
+
+    def parse_from_xml(self, xml):
+        super(KNodeDeadGuess, self).parse_from_xml(xml)
+        for item in xml:
+            if item.tag == 'loco-cmd':
+                self.command.parse_from_xml(item)
 
 class KNodeAbsolute(KNode):
     def __init__(self):
@@ -36,7 +51,7 @@ class KNodeAbsolute(KNode):
                 self.orientation.parse_from_xml(item)
             elif item.tag == 'velocity':
                 self.velocity.parse_from_xml(item)
-
+            
 
 class KNodePause(KNode):
     def __init__(self):
@@ -142,5 +157,10 @@ class Kineme(object):
                 k = KNodeDepth()
                 k.parse_from_xml(kdef)
                 self.knodes.append(k)
+
+            # THIS SUCKS, DONT USE IT.    
+            elif type == 'knode-dg':
+                k = KNodeDeadGuess()
+                k.parse_from_xml(k)
             else:
                 print("NO KNODE TYPE RECOGNIZED.")

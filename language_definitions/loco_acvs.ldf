@@ -39,7 +39,7 @@
         </symbols>
 
         <vectors>
-            <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_loco_oled" file="loco_acvs_digitaldisplay.sdf"></vector>
+            <vector name="DigitalDisplay" type="explicit_communication" pkg="proteus_oled_loco" file="loco_acvs_digitaldisplay.sdf"></vector>
             <vector name="TTSSiren" type="explicit_communication" pkg="proteus_siren" file="loco_acvs_tts-soneme.sdf"></vector>
             <vector name="TonalSiren" type="explicit_communication" pkg="proteus_siren" file="loco_acvs_tone-soneme.sdf"></vector>
             <vector name="ActiveHREye" type="explicit_communication" pkg="proteus_hreye" file="loco_acvs_active-luceme.sdf"></vector>
