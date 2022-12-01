@@ -1,4 +1,0 @@
-geometry_msgs/Transform transform
-string mode
----
-bool success
