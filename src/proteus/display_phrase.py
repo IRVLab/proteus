@@ -4,10 +4,10 @@ from proteus.text import Text
 from proteus.duration import Duration
 
 class DNode(Node):
-    def __init__(self, id, desc, text, dur):
-        super().__init__(id, desc)
-        self.text = text
-        self.duration = dur
+    def __init__(self):
+        super().__init__()
+        self.text = None
+        self.duration = None
 
     def __str__(self):
         return "{0} TEXT({1.text}) DUR({1.duration})".format(super().__str__(), self)

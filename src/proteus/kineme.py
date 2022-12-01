@@ -9,43 +9,43 @@ from proteus.loco_command import LoCOCommand
 
 class KNode(Node):
     def __init__(self):
-        super(KNode, self).__init__()
+        super().__init__()
         self.duration = Duration()
 
     def __str__(self):
-        return "{0} DUR({1.duration})".format(super(KNode, self).__str__(), self)
+        return "{0} DUR({1.duration})".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNode, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
         for item in xml:
             if item.tag == 'duration':
                 self.duration.parse_from_xml(item)
 
 class KNodeDeadGuess(KNode):
     def __init__(self):
-        super(KNodeDeadGuess, self).__init__()
+        super().__init__()
         self.command = LoCOCommand()
 
     def __str__(self):
-        return "{0} CMD({1.command}) ".format(super(KNodeDeadGuess, self).__str__(), self)
+        return "{0} CMD({1.command}) ".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNodeDeadGuess, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
         for item in xml:
             if item.tag == 'loco-cmd':
                 self.command.parse_from_xml(item)
 
 class KNodeAbsolute(KNode):
     def __init__(self):
-        super(KNodeAbsolute, self).__init__()
+        super().__init__()
         self.orientation = Orientation()
         self.velocity = Velocity()
 
     def __str__(self):
-        return "{0} ORR({1.orientation}) VEL({1.velocity}) ".format(super(KNodeAbsolute, self).__str__(), self)
+        return "{0} ORR({1.orientation}) VEL({1.velocity}) ".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNodeAbsolute, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
         for item in xml:
             if item.tag == 'orientation':
                 self.orientation.parse_from_xml(item)
@@ -55,25 +55,25 @@ class KNodeAbsolute(KNode):
 
 class KNodePause(KNode):
     def __init__(self):
-        super(KNodePause, self).__init__()
+        super().__init__()
         
     def __str__(self):
-        return "{0} ".format(super(KNodePause, self).__str__(), self)
+        return "{0} ".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNodePause, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
 
 class KNodeDepth(KNode):
     def __init__(self):
-        super(KNodeDepth, self).__init__()
+        super().__init__()
         self.depth = Depth()
         self.velocity = Velocity()
         
     def __str__(self):
-        return "{0} DEPTH {1.depth} VEL {1.velocity}".format(super(KNodeDepth, self).__str__(), self)
+        return "{0} DEPTH {1.depth} VEL {1.velocity}".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNodeDepth, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
         for item in xml:
             if item.tag == 'depth':
                 self.depth.parse_from_xml(item)
@@ -92,13 +92,13 @@ class KNodeDirectional(KNode):
 
 class KNodeQuantity(KNode):
     def __init__(self):
-        super(KNodeQuantity, self).__init__()
+        super().__init__()
         self.quantity = Quantity()
     def __str__(self):
-        return "{0} Quantity {1.quantity}".format(super(KNodeQuantity, self).__str__(), self)
+        return "{0} Quantity {1.quantity}".format(super().__str__(), self)
 
     def parse_from_xml(self, xml):
-        super(KNodeQuantity, self).parse_from_xml(xml)
+        super().parse_from_xml(xml)
         for item in xml:
             if item.tag == 'quantity':
                 self.quantity.parse_from_xml(item)
@@ -161,6 +161,7 @@ class Kineme(object):
             # THIS SUCKS, DONT USE IT.    
             elif type == 'knode-dg':
                 k = KNodeDeadGuess()
-                k.parse_from_xml(k)
+                k.parse_from_xml(kdef)
+                self.knodes.append(k)
             else:
                 print("NO KNODE TYPE RECOGNIZED.")
