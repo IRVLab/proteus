@@ -45,7 +45,6 @@ class Language(object):
 
         return s
 
-
     def parse_from_xml(self, xml_object):
         for c in xml_object:
             if c.tag == 'meta':
@@ -71,7 +70,7 @@ class Language(object):
                     elif gc.tag == 'actions':
                         continue
                     else:
-                        rospy.logwarn('Unexpected tag in language definition file: %s'%c.tag)
+                        raise ValueError(f'Unexpected tag in language definition file: {c.tag}')
                 
             elif c.tag == 'state':
                 continue
@@ -80,7 +79,7 @@ class Language(object):
             elif c.tag == 'actions':
                 continue
             else:
-                rospy.logwarn('Unexpected tag in language definition file: %s'%c.tag)
+                raise ValueError(f'Unexpected tag in language definition file: {c.tag}')
 
 
         # self.name = 
