@@ -15,7 +15,7 @@ class Vector(object):
         self.definition_file = None
 
     def __str__(self):
-        return f"    VEC{self.direction} ({self.name}): {self.explicitness} communication via {self.medium} [Static: {self.has_static} Dynamic: {self.has_dynamic}]\n"
+        return f"VEC_{self.direction} ({self.name}): {self.explicitness} communication via {self.medium} [Static: {self.has_static} Dynamic: {self.has_dynamic}]"
 
     def parse_from_rosparam(self, name, rosparam_obj):
         self.name = name
