@@ -39,12 +39,12 @@
         </symbols>
 
         <vectors>
-            <vector name="DigitalDisplay" type="explicit" static="True" dynamic="True" medium="text" pkg="proteus_oled_loco" file="loco_acvs_digitaldisplay.sdf"></vector>
-            <vector name="TTSSiren" type="explicit" static="True" dynamic="True" medium="sound" pkg="proteus_siren" file="loco_acvs_tts-soneme.sdf"></vector>
-            <vector name="TonalSiren" type="explicit" static="True" dynamic="False" medium="sound" pkg="proteus_siren" file="loco_acvs_tone-soneme.sdf"></vector>
-            <vector name="ActiveHREye" type="explicit" static="True" dynamic="False" medium="light" pkg="proteus_hreye" file="loco_acvs_active-luceme.sdf"></vector>
-            <vector name="OcularHREye" type="implicit" static="True" dynamic="" medium="light"  pkg="proteus_hreye" file="loco_acvs_ocular-luceme.sdf"></vector>
-            <vector name="RCVM" type="explicit" static="True" dynamic="False" medium="motion"  pkg="proteus_rcvm_loco" file="loco_acvs_dg_kineme.sdf"></vector>
+            <vector name="DigitalDisplay" id="digital_display" ns_prefix="oled" type="explicit" static="True" dynamic="True" medium="text" pkg="proteus_oled_loco" file="loco_acvs_digitaldisplay.sdf"></vector>
+            <vector name="TTSSiren" id="siren_tts" ns_prefix="siren/tts" type="explicit" static="True" dynamic="True" medium="sound" pkg="proteus_siren" file="loco_acvs_tts-soneme.sdf"></vector>
+            <vector name="TonalSiren" id="siren_tone" ns_prefix="siren/tone" type="explicit" static="True" dynamic="False" medium="sound" pkg="proteus_siren" file="loco_acvs_tone-soneme.sdf"></vector>
+            <vector name="ActiveHREye" id="hreye_active" ns_prefix="hreye/active" type="explicit" static="True" dynamic="False" medium="light" pkg="proteus_hreye" file="loco_acvs_active-luceme.sdf"></vector>
+            <vector name="OcularHREye" id="hreye_ocular" ns_prefix="hreye/ocular" type="implicit" static="False" dynamic="True" medium="light"  pkg="proteus_hreye" file="loco_acvs_ocular-luceme.sdf"></vector>
+            <vector name="RCVM" id="rcvm" ns_prefix="rcvm" type="explicit" static="True" dynamic="False" medium="motion"  pkg="proteus_rcvm_loco" file="loco_acvs_dg_kineme.sdf"></vector>
         </vectors>
 
         <actions>

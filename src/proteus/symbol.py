@@ -10,10 +10,11 @@ class Symbol(object):
         self.content_tags = None
 
     def __str__(self):
-        return f"SYM-{self.direction}: ({self.id}) {self.name}, {self.input_required} \n"
+        return f"SYM-{self.direction}: ({self.name}), {self.input_required} symbol with tags {self.content_tags}"
 
-    def parse_from_rosparam(self, id, rosparam_obj):
-        self.name = id
+    def parse_from_rosparam(self, name, rosparam_obj):
+        self.name = name
+        self.id = rosparam_obj['id']
         self.input_required = rosparam_obj['input_required']
         self.content_tags = rosparam_obj['content_tags']
     

@@ -28,22 +28,21 @@ if __name__ == '__main__':
     rospy.loginfo('Putting symbol info on the parameter server...')
     # Put language symbols up on the ROS parameter server
     for symbol in lang.in_symbols:
-        symbol_dict = {"input_required":symbol.input_required, "content_tags": symbol.content_tags}
-        rospy.set_param("symbols/in/%s"%(symbol.id), symbol_dict)
+        symbol_dict = {"id": symbol.id, "input_required":symbol.input_required, "content_tags": symbol.content_tags}
+        rospy.set_param("symbols/in/%s"%(symbol.name.replace(' ', '_')), symbol_dict)
 
     for symbol in lang.out_symbols:
-        symbol_dict = {"input_required":symbol.input_required}
-        symbol_dict = {"input_required":symbol.input_required, "content_tags": symbol.content_tags}
-        rospy.set_param("symbols/out/%s"%(symbol.id), symbol_dict)
+        symbol_dict = {"id": symbol.id, "input_required":symbol.input_required, "content_tags": symbol.content_tags}
+        rospy.set_param("symbols/out/%s"%(symbol.name.replace(' ', '_')), symbol_dict)
 
     rospy.loginfo('Putting vector info on the parameter server...')
     # Put up vector information on the ROS parameter server
     for vector in lang.in_vectors:
-        vector_dict = {"definition_file":vector.definition_file, "pkg":vector.pkg ,"explicitness":vector.explicitness, "static": vector.has_static, "dynamic": vector.has_dynamic, "medium":vector.medium}
+        vector_dict = {"definition_file":vector.definition_file, "id": vector.id, "ns_prefix": vector.namespace_prefix, "pkg":vector.pkg ,"explicitness":vector.explicitness, "static": vector.has_static, "dynamic": vector.has_dynamic, "medium":vector.medium}
         rospy.set_param("vectors/in/%s"%(vector.name), vector_dict)
 
     for vector in lang.out_vectors:
-        vector_dict = {"definition_file":vector.definition_file, "pkg":vector.pkg ,"explicitness":vector.explicitness, "static": vector.has_static, "dynamic": vector.has_dynamic, "medium":vector.medium}
+        vector_dict = {"definition_file":vector.definition_file, "id": vector.id, "ns_prefix": vector.namespace_prefix, "pkg":vector.pkg ,"explicitness":vector.explicitness, "static": vector.has_static, "dynamic": vector.has_dynamic, "medium":vector.medium}
         rospy.set_param("vectors/out/%s"%(vector.name), vector_dict)
 
     # TODO Also put up other information as necessary
