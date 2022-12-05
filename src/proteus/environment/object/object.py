@@ -1,6 +1,5 @@
 import uuid
 
-class Mission(object):
+class Object(object):
     def __init__(self):
         self.id = uuid.uuid1()
-    

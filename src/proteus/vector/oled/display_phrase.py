@@ -1,7 +1,7 @@
 from builtins import super
-from proteus.symbols.node import Node
-from proteus.symbols.text import Text
-from proteus.symbols.duration import Duration
+from proteus.symbol.node import Node
+from proteus.symbol.text import Text
+from proteus.symbol.duration import Duration
 
 class DNode(Node):
     def __init__(self):

@@ -1,7 +1,7 @@
 import rospkg
 rospack = rospkg.RosPack()
-from proteus.symbols.synth_track import SynthTrack
-from proteus.vectors.dynamic_input import DynamicInput
+from proteus.symbol.synth_track import SynthTrack
+from proteus.vector.dynamic_input import DynamicInput
 
 class SirenConfig(object):
     def __init__(self):

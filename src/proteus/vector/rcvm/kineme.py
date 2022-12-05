@@ -1,11 +1,11 @@
-from proteus.symbols.node import Node
-from proteus.symbols.position import Position
-from proteus.symbols.orientation import Orientation
-from proteus.symbols.velocity import Velocity
-from proteus.symbols.depth import Depth
-from proteus.symbols.duration import Duration
-from proteus.symbols.quantity import Quantity
-from proteus.symbols.loco_command import LoCOCommand
+from proteus.symbol.node import Node
+from proteus.symbol.position import Position
+from proteus.symbol.orientation import Orientation
+from proteus.symbol.velocity import Velocity
+from proteus.symbol.depth import Depth
+from proteus.symbol.duration import Duration
+from proteus.symbol.quantity import Quantity
+from proteus.symbol.loco_command import LoCOCommand
 
 class KNode(Node):
     def __init__(self):

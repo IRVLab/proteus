@@ -1,5 +1,5 @@
-from proteus.vectors.vector import Vector
-from proteus.symbols.symbol import Symbol
+from proteus.vector.vector import Vector
+from proteus.symbol.symbol import Symbol
 
 class Language(object):
     def __init__(self):

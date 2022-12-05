@@ -1,6 +1,6 @@
 import uuid
 
-class Mission(object):
+class Environment(object):
     def __init__(self):
         self.id = uuid.uuid1()
     
