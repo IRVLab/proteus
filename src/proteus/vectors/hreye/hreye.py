@@ -1,7 +1,7 @@
-from proteus.luceme import Luceme
-from proteus.ring import Ring
-from proteus.sector import Sector
-from proteus.color import Color
+from proteus.vectors.luceme import Luceme
+from proteus.vectors.ring import Ring
+from proteus.vectors.sector import Sector
+from proteus.symbols.color import Color
 
 class HREyeConfig(object):
     def __init__(self):

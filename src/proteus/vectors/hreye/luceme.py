@@ -1,13 +1,13 @@
-from proteus.node import Node
-from proteus.blink import Blink
-from proteus.color_map import ColorMapping
-from proteus.color import Color
-from proteus.fill import Fill
-from proteus.illumination import Illumination
-from proteus.pulse import Pulse
-from proteus.ring import Ring
-from proteus.sector import Sector
-from proteus.duration import Duration
+from proteus.symbols.node import Node
+from proteus.symbols.blink import Blink
+from proteus.symbols.color_map import ColorMapping
+from proteus.symbols.color import Color
+from proteus.symbols.fill import Fill
+from proteus.symbols.illumination import Illumination
+from proteus.symbols.pulse import Pulse
+from proteus.vectors.ring import Ring
+from proteus.vectors.sector import Sector
+from proteus.symbols.duration import Duration
 
 class LNode(Node):
     def __init__(self):

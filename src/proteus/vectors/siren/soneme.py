@@ -1,9 +1,9 @@
-from proteus.node import Node
-from proteus.audio import Audio, VariableAudio
-from proteus.speech import Speech, VariableSpeech
-from .quantity import Quantity
-from .duration import Duration
-from proteus.tone import Tone, RunTone, VariableTone
+from proteus.symbols.node import Node
+from proteus.symbols.audio import Audio, VariableAudio
+from proteus.symbols.speech import Speech, VariableSpeech
+from ...symbols.quantity import Quantity
+from ...symbols.duration import Duration
+from proteus.symbols.tone import Tone, RunTone, VariableTone
 
 class SNode(Node):
     def __init__(self):
