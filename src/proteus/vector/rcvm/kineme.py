@@ -1,4 +1,4 @@
-from proteus.symbol.node import Node
+from proteus.vector.node import Node
 from proteus.symbol.position import Position
 from proteus.symbol.orientation import Orientation
 from proteus.symbol.velocity import Velocity

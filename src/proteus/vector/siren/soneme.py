@@ -1,8 +1,7 @@
-from proteus.symbol.node import Node
+from proteus.vector.node import Node
 from proteus.symbol.audio import Audio, VariableAudio
 from proteus.symbol.speech import Speech, VariableSpeech
-from ...symbols.quantity import Quantity
-from ...symbols.duration import Duration
+from proteus.symbol import Quantity, Duration
 from proteus.symbol.tone import Tone, RunTone, VariableTone
 
 class SNode(Node):

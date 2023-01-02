@@ -1,12 +1,12 @@
-from proteus.symbol.node import Node
+from proteus.vector.node import Node
 from proteus.symbol.blink import Blink
 from proteus.symbol.color_map import ColorMapping
 from proteus.symbol.color import Color
 from proteus.symbol.fill import Fill
 from proteus.symbol.illumination import Illumination
 from proteus.symbol.pulse import Pulse
-from proteus.vector.ring import Ring
-from proteus.vector.sector import Sector
+from proteus.vector.hreye.ring import Ring
+from proteus.vector.hreye.sector import Sector
 from proteus.symbol.duration import Duration
 
 class LNode(Node):

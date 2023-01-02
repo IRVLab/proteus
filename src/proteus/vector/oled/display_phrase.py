@@ -1,5 +1,5 @@
 from builtins import super
-from proteus.symbol.node import Node
+from proteus.vector.node import Node
 from proteus.symbol.text import Text
 from proteus.symbol.duration import Duration
 
