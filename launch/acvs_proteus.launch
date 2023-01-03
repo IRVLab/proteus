@@ -3,4 +3,8 @@
         <param name="language_definition_file" type="string" value="$(find proteus)/language_definitions/loco_acvs.ldf" ></param>
         <include file="$(find proteus)/launch/proteus.launch"></include>
     </group>
+    <include file="$(find proteus_oled_loco)/launch/loco_oled_display.launch"/>
+    <include file="$(find proteus_hreye)/launch/proteus_hreye.launch"/>
+    <include file="$(find proteus_rcvm_loco)/launch/loco_rcvm.launch"/>
+    <include file="$(find proteus_siren)/launch/tts_and_synth.launch"/>
 </launch>
