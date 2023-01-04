@@ -11,4 +11,3 @@ def assign_service_type(symbol_input="trigger"):
         return proteus_msgs.srv.SymbolQuantity
     else:
         raise ValueError(f"Symbol input type {symbol_input} not recognized")
-        return None

@@ -22,17 +22,17 @@
         <symbols>
             <symbol name="Affirmative" id="affirmative" input="trigger" description="A confirmation response indicating Yes, I will, etc." tags="conversational,control"></symbol>
             <symbol name="Negative" id="negative" input="trigger" description="A declining response indicating No, I will not, etc." tags="conversational,control"></symbol>
-            <symbol name="Attention" id="attention" input="trigger" description="A command telling the interactant to pay attention" tags="conversational, interjection"></symbol>
+            <symbol name="Attention" id="attention" input="trigger" description="A command telling the interactant to pay attention" tags="conversational,interjection"></symbol>
             <symbol name="Follow Me" id="follow_me" input="trigger" description="A command requesting the interactant to follow the AUV" tags="commands"></symbol>
             <symbol name="Follow You" id="follow_you" input="trigger" description="An informational phrase telling the interactant that the AUV will follow them" tags="information"></symbol>
             <symbol name="Come To Me" id="come" input="trigger" description="A command telling the interactnat to come to the AUV" tags="commands"></symbol>
-            <symbol name="Danger" id="danger" input="trigger" description="An informational phrase telling interactants that there is danger nearby." tags="information, interjection"></symbol>
+            <symbol name="Danger" id="danger" input="trigger" description="An informational phrase telling interactants that there is danger nearby." tags="information,interjection"></symbol>
             <symbol name="Malfunction" id="malfunction" input="trigger" description="An informational phrase informing interactants of an internal malfunction." tags="information"></symbol>
-            <symbol name="Go Left" id="go_left" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands, directional"></symbol>
-            <symbol name="Go Right" id="go_right" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands, directional"></symbol>
-            <symbol name="Go Forward" id="go_forward" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands, directional"></symbol>
-            <symbol name="Go Back" id="go_back" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands, directional"></symbol>
-            <symbol name="Stay" id="stay" input="trigger" description="A command telling the interactant to stay where they are." tags="commands, directional"></symbol>
+            <symbol name="Go Left" id="go_left" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands,directional"></symbol>
+            <symbol name="Go Right" id="go_right" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands,directional"></symbol>
+            <symbol name="Go Forward" id="go_forward" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands,directional"></symbol>
+            <symbol name="Go Back" id="go_back" input="trigger" description="A response requesting the interactant to move in a direction" tags="commands,directional"></symbol>
+            <symbol name="Stay" id="stay" input="trigger" description="A command telling the interactant to stay where they are." tags="commands,directional"></symbol>
             <symbol name="Remaining Time" id="time_remaining" input="quantity" description="An informational phrase telling the interactant how much time is left." tags="information"></symbol>
             <symbol name="Wait For Command" id="wait_for_command" input="trigger" description="A question asking the interactant for input of some kind." tags="conversational,question"></symbol>
             <symbol name="Which Way" id="which_way" input="trigger" description="A question asking the interactant which way to go." tags="question"></symbol>
@@ -44,7 +44,7 @@
             <vector name="TonalSiren" id="siren_tone" ns_prefix="siren/tone/" type="explicit" static="True" dynamic="False" medium="sound" pkg="proteus_siren" file="loco_acvs_tone-soneme.sdf"></vector>
             <vector name="ActiveHREye" id="hreye_active" ns_prefix="hreye/active/" type="explicit" static="True" dynamic="False" medium="light" pkg="proteus_hreye" file="loco_acvs_active-luceme.sdf"></vector>
             <vector name="OcularHREye" id="hreye_ocular" ns_prefix="hreye/ocular/" type="implicit" static="False" dynamic="True" medium="light"  pkg="proteus_hreye" file="loco_acvs_ocular-luceme.sdf"></vector>
-            <vector name="RCVM" id="rcvm" ns_prefix="rcvm/" type="explicit" static="True" dynamic="False" medium="motion"  pkg="proteus_rcvm_loco" file="loco_acvs_dg_kineme.sdf"></vector>
+            <vector name="RCVM" id="rcvm" ns_prefix="rcvm" type="explicit" static="True" dynamic="False" medium="motion"  pkg="proteus_rcvm_loco" file="loco_acvs_dg_kineme.sdf"></vector>
         </vectors>
 
         <actions>
